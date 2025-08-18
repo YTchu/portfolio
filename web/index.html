@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta http-equiv="content-language" content="zh-Hant-TW" />
+		<title></title>
+		<style>	
+			*{
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			body{
+				font-family:  -apple-system,BlinkMacSystemFont,avenir next,avenir,segoe ui,helvetica neue,helvetica,Cantarell,Ubuntu,roboto,noto,arial,sans-serif;
+				font-weight: 300;
+				line-height: 1.5;
+				letter-spacing: 2px;
+				color: #111111;	
+				overflow-x: hidden;
+			} 
+			
+			.light, .light a{
+				color: #111111;
+			}
+			.dark, .dark a{
+				color: rgba(255, 255, 255,.95);
+			}
+			
+			.light .highlighter{
+				padding-bottom: 4px;
+				background: linear-gradient(180deg, #d7ffb800 50%, #d7ffb8 50%);
+			}
+			.dark .highlighter{
+				padding-bottom: 4px;
+				background: linear-gradient(180deg, #d7ffb800 50%, #0000001f 50%);
+			}
+			.link{
+				display: inline-block;
+				letter-spacing: normal;
+				margin-top: 16px;
+				font-size: 14px;
+				font-weight: 400;
+				border-bottom-width: 1px;
+				border-bottom-style: solid;
+				text-decoration: none;
+			}
+			.link:hover {
+				border-bottom-width: 0;
+			}
+			
+			/** 區塊獨立背景色 **/
+			.A {background-color: #FCF8F7;} 
+			.B {background-color: #F7EBE6;}
+			.C {background-color: #FAFAFA;} 
+			.D {background-color: #EFF7F1;} 
+			.E {background-color: #E6E6E6;}
+			.F {background-color: #ad513e;} 
+			.G {background-color: #a59285;} 
+			.H {background-color: burlywood;} 
+			.I {background-color: burlywood;} 
+			
+			
+/** 自訂捲軸 **/			
+			@supports (scrollbar-color: auto) {
+			  .scroll-box {
+				scrollbar-color: rgba(0,0,0,.1) transparent;
+			  }
+			.scroll-box:hover{
+				scrollbar-color: rgba(0,0,0,.4) transparent;
+			  }
+			}
+			@supports selector(::-webkit-scrollbar) {
+			  .scroll-box::-webkit-scrollbar {
+				width: 6px;
+				height: 8px;
+				background-color: transparent;
+			  }
+			  .scroll-box::-webkit-scrollbar-thumb {
+				background-color: rgba(0,0,0,.1);
+				border-radius: 3px;
+			  }
+			.scroll-box::-webkit-scrollbar-thumb:hover {
+				background-color: rgba(0,0,0,.4);
+			  }
+			}
+			
+/** 貼紙 **/
+			.sticker{
+				display: inline-block;
+				position: fixed;
+				left: clamp(calc(100dvw - 56px - 3dvw), calc(100dvw - 5dvw - 3dvw), calc(100dvw - 80px - 3dvw));
+				top: 14px;
+				margin-right: 5dvw;
+				border-radius: 999px;
+				overflow: hidden;
+				aspect-ratio: 1/1;
+				width: 5vw;
+				min-width: 56px;
+				max-width: 80px;
+				z-index: 9999;
+				transform: rotate(-33deg);
+				-webkit-transition: .6s;
+				transition: .6s;
+				cursor: pointer;
+			}
+			.js_switch .sticker{
+				position: relative;
+				left: 0;
+				top: 14px;
+				width: 100px;
+				max-width: 100px;
+				margin-right: 16px;
+				transform: rotate(0deg);
+				-webkit-transition: 1.2s;
+				transition: 1.2s;
+			}
+
+			
+			.sticker img{
+				width: 100%;
+				height: auto;
+			}
+			.rotating {
+				-webkit-animation: rotate 1.6s ease-in-out infinite;
+				animation: rotate 1.6s ease-in-out infinite;
+				animation-direction: alternate-reverse;
+			}
+			.js_switch .rotating {
+				-webkit-animation: none;
+				animation: none;
+				animation-direction: normal;
+			}
+			.rotating:hover{
+				animation-play-state: paused;
+			}
+			@keyframes rotate {
+				0% { transform: rotate(-30deg);}
+				100% { transform: rotate(30deg);}
+			}
+			@media screen and (min-width: 2752px){
+				.sticker{
+					left: 75dvw;
+				}
+			}
+			
+/** 側開頁面 **/
+			.js_switch {
+				right: 0 !important;
+				visibility: visible !important;
+				overflow: hidden;
+			}
+			#intro {
+				position: fixed;
+				display: flex;
+				width: 100%;
+				height: 100dvh;
+				justify-content: center;
+				align-items: center;
+				top: 0;
+				right: -100%;
+				padding: 0 15dvw;
+				background-color: #ccc;
+				z-index: 998;
+				-webkit-transition: 0.4s;
+				transition: 0.4s;
+			}
+			.intro_content{
+				position: relative;
+				width: 100%;
+				max-height: calc(100% - 210px);
+				max-width: 960px;
+				padding: 0 5dvw 0 7dvw;
+				line-height: 2;
+				text-align: justify;
+				overflow-y: scroll;
+				overflow-x: hidden;
+			}
+			.intro_content h1{
+				font-size: clamp(20px, 3dvw, 32px);
+			}
+			#mask {
+				position: fixed;
+				width: 100%;
+				height: 100vh;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				z-index: 997;
+				background-color: rgba(0, 0, 0, 0);
+			}
+			#mask.js_switch {
+				background-color: rgba(0, 0, 0, .95);
+				-webkit-transition: 0.3s;
+				transition: 0.3s;
+			}
+	
+/** 跑馬燈 **/
+			.marquee {
+				font-size: 16px;
+				color: #fff;
+				height: 64px;
+				overflow: hidden;
+				background-color: #000;
+				position: relative;
+				display: flex;
+				flex-wrap: nowrap;
+				align-items: center;
+			}
+			.marquee div {
+				display: block;
+				width: 300%;
+				position: absolute; 
+				overflow: hidden;
+				animation: marquee 25s linear infinite;
+			}
+			.marquee div:hover{
+				animation-play-state: paused;
+				color: red;
+				font-size: 20px;
+			}
+			/* span with text */
+			.marquee span {
+				float: left;
+				width: 50%;
+				white-space: nowrap;
+			}
+			/* keyframe */
+			@keyframes marquee {
+				0% { left: 0; }
+				100% { left: -100%; }
+			}
+			
+			
+			.section{
+				position: relative;
+				width: 100dvw;
+				height: 100dvh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 15dvh 10dvw;
+			}
+			
+			.container{
+				position: relative;
+				width: 100%;
+				max-width: 1200px;
+				height: 100%;
+				display: grid;
+				grid-template-rows: 75% auto;
+				overflow: hidden;
+			}
+			
+			.page {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: flex;
+				flex-flow: column nowrap;
+				gap: 4px;
+				z-index: 996;
+			}
+			.number{
+				font-size: 16px;
+				line-height: 1.2;
+			}
+			.number:after{
+				position: relative;
+				content: " / 10"; /** 總數 **/
+				font-size: 12px;
+			}
+			.cate{
+				font-size: 16px;
+			}
+
+			
+			.content{
+				position: relative;
+				min-height: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}			
+			.wrapper{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 48px;
+			}
+			.project{
+				position: relative;
+				/*flex: 1;*/
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.project:has(img){
+				flex: 1;
+			}
+			.project img{
+				position: absolute;
+				max-height: 100%;
+				max-width: 100%;
+			}
+			iframe{
+				border: 0;
+			}
+			.project iframe{
+				width: 100%;
+				object-fit: contain;
+			}
+			
+			.wrapper:has(video),.wrapper:has(iframe){
+				transform: scale(.85);
+			}
+			.project:nth-child(1):has(source),iframe:nth-child(1){
+				width: 75%;
+				aspect-ratio: 16/9;
+			}
+			.project:nth-child(2):has(source),iframe:nth-child(2){
+				width: calc(25% - 2.3dvw);
+				aspect-ratio: 16/35;
+			}
+			
+			.text_box{
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				align-items: flex-end;
+				gap: min(80px, 160px) 0;	
+			}
+			.idea{
+				width: 65%;
+			}
+			.idea .title{
+				font-size: 24px;
+				font-weight: bold;
+		    	margin-bottom: 16px;
+			}
+			.idea .description{
+				font-size: 18px;
+			}
+
+			.tools{
+				display: flex;
+				flex-flow: row wrap;
+				font-size: 14px;
+				letter-spacing: 1px;
+			}
+			.tools ul{
+				display: inline-flex;
+				flex-flow: row wrap;
+				gap: 4px;
+				-moz-text-align-last: justify;
+				list-style-type: none;
+				padding-left: 0;
+			}
+			.tools li::after{
+				position: relative;
+				content: "/";
+				opacity: .5;
+				margin-left: 4px;
+			}
+			.tools li:last-child::after{
+				display: none;
+			}
+			
+			@media screen and (max-height: 899px) and (orientation: landscape){
+				.section{
+					padding: 10dvh 10dvw;
+				}
+				.container{
+					grid-template-rows: 65% auto;
+				}
+				.idea .title{
+					font-size: 20px;
+					margin-bottom: 12px;
+				}
+			}
+			
+			/** 左右編排 **/
+			.layout_col{
+				grid-template-rows:unset;
+    		    grid-template-columns: 50% 50%;
+				align-items: end;
+			}
+			.layout_col .content{
+				order: 2;
+			}
+			.layout_col .wrapper{
+				margin: 0;
+			}
+			.layout_col .text_box{
+				flex-flow: column wrap;
+				align-items: flex-start;
+			}
+			
+			
+			@media screen and (max-width: 768px), (orientation: portrait){
+				#intro{
+					padding: 0 5dvw;
+				}
+				.section{
+					height: auto;
+					padding: 10dvw 5dvw;
+				}
+				.container{
+					display: flex;
+					flex-direction: column;
+				}
+				.project img{
+					position: relative;
+				}
+
+				.page {
+					position: relative;
+					align-self: flex-start;
+				}
+				.wrapper{
+					margin: 0;
+					gap: 24px;
+					/** 新增未測其它 **/
+					min-height: 40dvh;
+					padding: 5dvh 0;
+				}
+				.wrapper:has(video), .wrapper:has(iframe){
+					/*flex-direction: column;*/
+					flex-wrap: wrap-reverse;
+					height: auto;
+					transform: scale(1);
+				}
+				.project:nth-child(1):has(source), iframe:nth-child(1){
+					width: 100%;
+				}
+				.project:nth-child(2):has(source), iframe:nth-child(2){
+					width: 90%
+				}
+				.text_box{
+					flex-flow: row wrap;
+				}
+				.idea{
+					width: 100%;
+				}
+				
+				/** 左右編排 **/
+				.layout_col{
+					grid-template-rows: auto 1.5fr 1fr;
+					grid-template-columns: unset;
+					/*align-items: end;*/
+				}
+				.layout_col .content{
+					order: unset;
+					align-self: center;
+				}
+				.layout_col .text_box{
+					flex-flow: row wrap;
+					align-items: flex-start;
+				}
+			}
+		</style>
+
+	</head>
+		<body id="scroll_hidden">
+		<div id="myId"></div>
+		<div id="mask"></div>
+		<div id="intro">
+			<div class="intro_content scroll-box">
+				<h1><span class="sticker rotating"><img src="./img/chuchus.jpg" alt="icon"></span>朱怡姿｜JO CHU</h1>
+				<p>目前任職於聯合新聞網資深視覺設計師。擁有多年視覺設計及網頁設計開發經驗，善於將介面設計、互動效果與品牌視覺延伸，並以結構化策略與設計美感打造產品的完整度與一致性。近幾年曾參與聯合新聞網多個平台的設計與優化，包括 udnStyle、女子漾、寵物部落、房地產、500 輯、選舉開票與奧運專題。早期則從事潮流服飾 Galoop 品牌設計師。畢業於台南應用科技大學視覺傳達設計系。</p>
+			</div>
+		</div>
+		
+		<section class="section light A">	
+			<div class="container">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">Logo</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<picture class="project"><img style="width: 240px; height: auto;" src="./img/pet_loading.gif" alt="寵物部落_loading"></picture>
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p><span class="highlighter">承襲聯合新聞網 Logo </span>中橘色插座的核心造型，作為本次<span class="highlighter">重構發展狗與貓角色的出發點</span>，建立子頻道與母品牌之間的視覺連結，傳達一致性的品牌識別。</p>
+							<a class="link" href="https://pets.udn.com" target="_blank">官方網站</a>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Figma</li><li>Lottielab</li></ul></div>
+				</div>
+			</div>			
+		</section>
+		
+		<section class="section light B">	
+			<div class="container">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">YT 頁面山頭圖</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<picture class="project"><dotlottie-player src="./img/pet_video.json" background="transparent" speed="1" style="width: 100%; max-width: 420px;" loop autoplay></dotlottie-player></picture>
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p>延續 pets.udn.com 的識別性，<span class="highlighter">採用原 logo 中的寵物頭型輪廓作為設計元素，使品牌在不同平台上維持一致性與辨識度</span>。將狗、播放鍵、貓串連成一體，傳達 pets.udn.com 在影音內容上一起關注、陪伴毛小孩。</p>
+							<a class="link" href="https://www.youtube.com/@udnpet" target="_blank">YT 頻道</a>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Figma</li><li>Phase</li></ul></div>
+				</div>
+			</div>			
+		</section>
+		
+		<section class="section light C">	
+			<div class="container layout_col">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">EDM</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<picture class="project"><img src="img/EDM.gif" alt=""/></picture>
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p>以進行測驗的擬人化大腦角色搭配動態圓點，象徵思考過程，結合明亮色彩<span class="highlighter">營造輕鬆趣味氛圍，減輕民眾對失智檢測的焦慮感</span>。背景圖示則是傳達健康生活與腦部保健息息相關的觀念。</p>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Midjourney</li><li>Photoshop</li><li>Figma</li><li>Lottielab</li></ul></div>
+				</div>
+			</div>			
+		</section>
+		
+		<section class="section light D">	
+			<div class="container">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">主視覺設計</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<picture class="project"><img src="img/co2.png" alt="我的減碳存摺_主視覺"></picture>
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p><span class="highlighter">將基隆、台北、新北、桃園的地圖輪廓擬人化</span>，轉化為各市代表角色，<span class="highlighter">象徵區域攜手合作與全民參與</span>的意涵。整體以明亮色彩營造清新、輕快的氛圍，呼應減碳生活理念。</p>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Illustrator</li><li>Figma</li></ul></div>
+				</div>
+			</div>			
+		</section>
+			
+		<section class="section light E">	
+			<div class="container layout_col">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">資訊圖表</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<picture class="project"><img src="./img/COVID19-map.gif" alt="COVID19 每日疫情資訊圖表"></picture>
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p>因應 COVID-19 疫情數據每日更新的需求，設計上導入 Google Sheets Sync 與 Figma 的<span class="highlighter">同步機制，讓圖表中的數值、排序與配色即時更新</span>，清晰呈現各縣市的疫情熱區與變化趨勢。此<span class="highlighter">作業流程大幅提升效率與正確性</span>，同時降低人工輸入錯誤的風險。</p>
+							<a class="link" href="https://docs.google.com/spreadsheets/d/1ixKQPHuQ64h1f_1DnmpA1hATB8asjxMdqSj_kp48baI/edit?usp=sharing" target="_blank">數據資料</a>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Figma</li><li>Excel 公式及函數</li><li>Google Sheets Sync</li></ul></div>
+				</div>
+			</div>			
+		</section>
+		
+		<section class="section dark F">	
+			<div class="container">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">活動網站</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<iframe class="project" src="https://player.vimeo.com/video/1110927058?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="1440" height="900" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="500碗-小吃圖鑑_website"></iframe>
+						<iframe class="project" src="https://player.vimeo.com/video/1110627648?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="374" height="812" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="500碗-小吃圖鑑_mobile"></iframe>
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p>結合扭蛋與圖鑑蒐集概念，打造具隨機性與成就感的互動體驗。以<span class="highlighter">大型扭蛋機與醒目的「登入抽扭蛋」按鈕作為行動呼籲，搭配圖鑑進度條引導使用者持續回訪參與</span>。部分插畫運用 ChatGPT 生成加上版面設計，呈現臺灣街頭小吃的日常與人情味。</p>
+							<a class="link" href="https://event.udn.com/bd_500bowls_2025" target="_blank">活動網站</a>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Figma</li><li>Chatgpt</li><li>Phase</li></ul></div>
+				</div>
+			</div>			
+		</section>
+		
+		<section class="section dark G">	
+			<div class="container">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">網站</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<iframe class="project" src="https://player.vimeo.com/video/1109498668?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="1440" height="900" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="udnStyle_website"></iframe>
+						<iframe class="project" src="https://player.vimeo.com/video/1110539479?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="374" height="812" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="udnStyle_website_mobile"></iframe>
+						<!--
+						<video autoplay muted loop class="project">
+							<source src="./img/style_for_desktop.mp4" type="video/mp4">
+							<source src="./img/style_for_desktop.ogg" type="video/ogg">
+						</video>
+						<video autoplay muted loop class="project">
+							<source src="./img/style_for_mobile.mp4" type="video/mp4">
+							<source src="./img/style_for_mobile.ogg4" type="video/ogg">
+						</video>
+						-->
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p>以灰階中性色為主調，搭配規律排版與細膩微互動，營造內斂、不干擾的瀏覽氛圍，使內容與圖片成為視覺焦點。金色點綴作為強調色，提升質感與精品氣息。<span class="highlighter">滑鼠懸停類別區塊觸發動畫軸線，懸停圖片提升亮度，引導視線聚焦並增添互動體驗</span>。</p>
+							<a class="link" href="https://style.udn.com" target="_blank">官方網站</a>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Figma</li></ul></div>
+				</div>
+			</div>			
+		</section>
+		
+		
+		<div class="marquee">
+		  <div>
+				<span>++++ this is a running text aka marquee using html &amp; css + text length is limited to the width ++++ this is a running text aka marquee using html &amp; css + text length is limited to the width </span>
+				<span>++++ this is a running text aka marquee using html &amp; css + text length is limited to the width ++++ this is a running text aka marquee using html &amp; css + text length is limited to the width </span>
+		  </div>
+		</div>
+		
+ 
+
+		<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		
+	</body>
+</html>
