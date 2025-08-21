@@ -58,8 +58,8 @@
 			.E {background-color: #E6E6E6;}
 			.F {background-color: #ad513e;} 
 			.G {background-color: #a59285;} 
-			.H {background-color: burlywood;} 
-			.I {background-color: burlywood;} 
+			.H {background-color: #FAFAFA;} 
+			.I {background-color: #FFF3EE;} 
 			
 			
 /** 自訂捲軸 **/			
@@ -93,7 +93,6 @@
 				left: clamp(calc(100dvw - 56px - 3dvw), calc(100dvw - 5dvw - 3dvw), calc(100dvw - 80px - 3dvw));
 				top: 14px;
 				margin-right: 5dvw;
-				border-radius: 999px;
 				overflow: hidden;
 				aspect-ratio: 1/1;
 				width: 5vw;
@@ -115,12 +114,11 @@
 				transform: rotate(0deg);
 				-webkit-transition: 1.2s;
 				transition: 1.2s;
-			}
-
-			
+			}			
 			.sticker img{
 				width: 100%;
 				height: auto;
+				border-radius: 999px;
 			}
 			.rotating {
 				-webkit-animation: rotate 1.6s ease-in-out infinite;
@@ -161,7 +159,7 @@
 				top: 0;
 				right: -100%;
 				padding: 0 15dvw;
-				background-color: #ccc;
+				background-color: #dfdfdf;
 				z-index: 998;
 				-webkit-transition: 0.4s;
 				transition: 0.4s;
@@ -172,13 +170,17 @@
 				max-height: calc(100% - 210px);
 				max-width: 960px;
 				padding: 0 5dvw 0 7dvw;
-				line-height: 2;
-				text-align: justify;
 				overflow-y: scroll;
 				overflow-x: hidden;
 			}
 			.intro_content h1{
 				font-size: clamp(20px, 3dvw, 32px);
+				margin-bottom: 16px;
+			}
+			.intro_content p{
+				margin-bottom: 16px;
+				line-height: 180%;
+				text-align: justify;
 			}
 			#mask {
 				position: fixed;
@@ -198,7 +200,8 @@
 	
 /** 跑馬燈 **/
 			.marquee {
-				font-size: 16px;
+				width: 100dvw;
+				font-size: 18px;
 				color: #fff;
 				height: 64px;
 				overflow: hidden;
@@ -218,7 +221,6 @@
 			.marquee div:hover{
 				animation-play-state: paused;
 				color: red;
-				font-size: 20px;
 			}
 			/* span with text */
 			.marquee span {
@@ -325,8 +327,11 @@
 				aspect-ratio: 16/9;
 			}
 			.project:nth-child(2):has(source),iframe:nth-child(2){
-				width: calc(25% - 2.3dvw);
+				/*width: calc(25% - 2.3dvw);*/
 				aspect-ratio: 16/35;
+			}
+			.mobile_xs{
+				aspect-ratio: 5/9 !important;
 			}
 			
 			.text_box{
@@ -402,8 +407,53 @@
 				align-items: flex-start;
 			}
 			
+			@media (min-width: 768px) and (max-width: 991px) {
+			  	#intro{
+					padding: 0 5dvw;
+				}
+				.section{
+					padding: 10dvw 5dvw;
+				}
+				.container{
+					grid-template-rows: auto 35%;
+				}
+				.wrapper{
+					margin: 0;
+					gap: 24px;
+					/** 新增未測其它 **/
+					min-height: 40dvh;
+					padding: 5dvh 0;
+				}
+				.project img{
+					position: relative;
+				}
+				.text_box{
+					flex-flow: column wrap;
+					align-items: flex-start;
+					gap: 80px;
+				}
+
+				.idea{
+					width: 100%;
+				}
+
+				/** 左右編排 **/
+				.layout_col{
+					grid-template-rows: 50% 50%;
+					grid-template-columns: unset;
+				}
+				.layout_col .content{
+					order: unset;
+					align-self: center;
+				}
+				.layout_col .text_box{
+					flex-flow: row wrap;
+					align-items: flex-start;
+				}
+			}
 			
-			@media screen and (max-width: 768px), (orientation: portrait){
+			@media screen and (max-width: 767px){
+				/*(orientation: portrait)*/
 				#intro{
 					padding: 0 5dvw;
 				}
@@ -471,9 +521,10 @@
 		<div id="myId"></div>
 		<div id="mask"></div>
 		<div id="intro">
-			<div class="intro_content scroll-box">
-				<h1><span class="sticker rotating"><img src="./img/chuchus.jpg" alt="icon"></span>朱怡姿｜JO CHU</h1>
-				<p>目前任職於聯合新聞網資深視覺設計師。擁有多年視覺設計及網頁設計開發經驗，善於將介面設計、互動效果與品牌視覺延伸，並以結構化策略與設計美感打造產品的完整度與一致性。近幾年曾參與聯合新聞網多個平台的設計與優化，包括 udnStyle、女子漾、寵物部落、房地產、500 輯、選舉開票與奧運專題。早期則從事潮流服飾 Galoop 品牌設計師。畢業於台南應用科技大學視覺傳達設計系。</p>
+			<div class="intro_content scroll-box light">
+				<h1><span class="sticker rotating"><img src="./img/chuchus.jpg" alt="icon"></span>朱怡姿</h1>
+				<p>目前任職於聯合新聞網資深視覺設計師。擁有十多年視覺設計及網頁設計開發經驗，<span class="highlighter">善於將介面設計、互動效果與品牌視覺延伸，並以結構化策略與設計美感打造產品的完整度與一致性</span>。近幾年參與聯合新聞網多個平台的網站設計與品牌識別，包括 udnStyle、房地產、500 輯、女子漾、寵物部落、選舉開票與奧運專題。早期則從事潮流服飾 Galoop 品牌設計師。畢業於台南應用科技大學 ─ 視覺傳達設計系。</p>
+				<p>希望有機會能將自身的經驗與發展方向，參與貴公司團隊，一起打造優質、實用的產品。</p>
 			</div>
 		</div>
 		
@@ -630,16 +681,56 @@
 					<div class="wrapper">
 						<iframe class="project" src="https://player.vimeo.com/video/1109498668?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="1440" height="900" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="udnStyle_website"></iframe>
 						<iframe class="project" src="https://player.vimeo.com/video/1110539479?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="374" height="812" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="udnStyle_website_mobile"></iframe>
-						<!--
-						<video autoplay muted loop class="project">
-							<source src="./img/style_for_desktop.mp4" type="video/mp4">
-							<source src="./img/style_for_desktop.ogg" type="video/ogg">
-						</video>
-						<video autoplay muted loop class="project">
-							<source src="./img/style_for_mobile.mp4" type="video/mp4">
-							<source src="./img/style_for_mobile.ogg4" type="video/ogg">
-						</video>
-						-->
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p>以灰階中性色為主調，搭配規律排版與細膩微互動，營造內斂、不干擾的瀏覽氛圍，使內容與圖片成為視覺焦點。金色點綴作為強調色，提升質感與精品氣息。<span class="highlighter">滑鼠懸停類別區塊觸發動畫軸線，懸停圖片提升亮度，引導視線聚焦並增添互動體驗</span>。</p>
+							<a class="link" href="https://style.udn.com" target="_blank">官方網站</a>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Figma</li></ul></div>
+				</div>
+			</div>			
+		</section>
+			
+	    <section class="section light H">	
+			<div class="container">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">後台</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<iframe class="project" src="https://player.vimeo.com/video/1111318807?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="1440" height="900" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="女子漾-前台_desktop"></iframe>
+						<iframe class="project mobile_xs" src="https://player.vimeo.com/video/1111479516?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="320" height="568" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="女子漾-前台體驗_mobile"></iframe>
+					</div>
+				</div>			
+				<div class="text_box">		
+					<div class="idea">
+						<h3 class="title">設計概念</h3>
+						<div class="description">
+							<p>愛體驗後台介面設計以品牌一致、功能效率、結構清晰為核心，在兼顧品牌風格與管理需求的同時，透過顏色標籤、表格式排版與明確的操作按鈕，實現快速辨識與高效操作，滿足後台管理效率至上的要求。此外，以一頁盡量完成的資訊設計，降低不必要的跳轉。</p>
+							<a class="link" href="https://style.udn.com" target="_blank">官方網站</a>
+						</div>
+					</div>				
+					<div class="tools">使用工具：<ul><li>Figma</li></ul></div>
+				</div>
+			</div>			
+		</section>
+			
+		<section class="section light I">	
+			<div class="container">
+				<div class="page">
+					<div class="number">01</div>
+					<div class="cate">後台</div>
+				</div>
+				<div class="content">
+					<div class="wrapper">
+						<iframe class="project" src="https://player.vimeo.com/video/1111342509?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="1440" height="900" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="女子漾-前台創作_desktop"></iframe>
+						<iframe class="project mobile_xs" src="https://player.vimeo.com/video/1111479516?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" width="320" height="568" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="女子漾-前台體驗_mobile"></iframe>
 					</div>
 				</div>			
 				<div class="text_box">		
@@ -658,13 +749,11 @@
 		
 		<div class="marquee">
 		  <div>
-				<span>++++ this is a running text aka marquee using html &amp; css + text length is limited to the width ++++ this is a running text aka marquee using html &amp; css + text length is limited to the width </span>
-				<span>++++ this is a running text aka marquee using html &amp; css + text length is limited to the width ++++ this is a running text aka marquee using html &amp; css + text length is limited to the width </span>
+				<span>歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653</span>
+				<span>歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653 歡迎與我聯繫： yitzu.chu@gmail.com ｜ 0928-101-653</span>
 		  </div>
-		</div>
-		
+		</div>	
  
-
 		<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		
