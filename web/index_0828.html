@@ -291,6 +291,7 @@
 				text-align: justify;
 				letter-spacing: 2px;
 			}
+			/*
 			#mask {
 				position: fixed;
 				width: 100%;
@@ -299,13 +300,14 @@
 				left: 0;
 				visibility: hidden;
 				z-index: 997;
-				background-color: rgba(0, 0, 0, 0);
+				background-color: #ddd;
 			}
 			#mask.js_switch {
-				background-color: rgba(0, 0, 0, .95);
+				background-color: #ddd;
 				-webkit-transition: 0.4s;
 				transition: 0.4s;
 			}
+			*/
 			
 			
 			
@@ -458,6 +460,9 @@
 				.down{
 					display: none;
 				}
+				.link:after{
+					content: "→";
+				}
 				#intro {
 					padding: 0 10dvw;
 				}
@@ -544,7 +549,7 @@
 		<div id="mask"></div>
 		<div id="intro">
 			<div class="intro_content scroll-box light">
-				<button class="close"></button>
+				<button class="close" id="close"></button>
 				<h1><span class="sticker"><img src="./img/ID.jpg" alt="照片"></span>朱 怡姿</h1>
 				<p>目前任職於聯合新聞網資深視覺設計師。擁有十多年視覺設計及網頁設計開發經驗，<b>善於將介面設計、互動效果與品牌視覺延伸，並以結構化策略與設計美感打造產品的完整度與一致性</b>。近幾年參與聯合新聞網多個平台的網站設計與品牌識別，包括 udnStyle、房地產、500 輯、女子漾、寵物部落、選舉開票與奧運專題。早期則從事潮流服飾 Galoop 品牌設計師。畢業於台南應用科技大學 ─ 視覺傳達設計系。</p>
 				<p>希望有機會能將自身的經驗與發展方向，參與貴公司團隊，一起打造優質、實用的產品。</p>
