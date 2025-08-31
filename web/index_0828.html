@@ -33,6 +33,7 @@
 				padding-bottom: 4px;
 				background: linear-gradient(180deg, #d7ffb800 50%, #0000001f 50%);
 			}
+
 			.link{
 				position: relative;
 				display: inline-block;
@@ -45,11 +46,12 @@
 			}
 			.link:after{
 				position: absolute;
-				content: "↗↗";
+				content: "↗";
 				font-size: 14px;
 				top: 0;
 				right: -20px;
 				transition: .4s;
+				font-variant-emoji: text;
 				font-family: Noto Sans TC, "Helvetica Neue", "Helvetica", "Arial" !important;
 			}
 			.link:hover {
