@@ -50,6 +50,7 @@
 				top: 0;
 				right: -20px;
 				transition: .4s;
+				font-family: Noto Sans TC, "Helvetica Neue", "Helvetica", "Arial";
 			}
 			.link:hover {
 				transition: .4s;
@@ -473,7 +474,7 @@
 					flex-wrap: wrap-reverse;
 					/*height: auto;*/
 					padding: 24px 0;
-					gap: 24px;
+					gap: 0;
 				}
 				.project{
 					height: inherit;
@@ -482,10 +483,14 @@
 				.project:nth-child(1):has(source),iframe:nth-child(1){
 					height: auto;
 					width: 100%;
+					transform: scale(1.45);
+        			padding: 8dvh 0;
 				}
 				.project:nth-child(2):has(source),iframe:nth-child(2){
 					height: auto;
 					width: 100%;
+					transform: scale(2);
+        			padding: 8dvh 0;
 				}
 				.text_box{
 					align-items: flex-end;
