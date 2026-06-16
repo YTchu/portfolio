@@ -11,7 +11,7 @@
 
       :root {
         --font-sans:
-          SFPro, "Noto Sans TC", "PingFang TC", "Helvetica Neue", Helvetica,
+          "Noto Sans TC", "PingFang TC", "Helvetica Neue", Helvetica,
           Arial, sans-serif;
       }
 
@@ -34,8 +34,9 @@
 	 .description-text b {
         display: inline-block;
 	    font-weight: 500;
-        font-size: 18px;
-        line-height: 1.5;
+        font-size: 20px;
+        line-height: 1.25;
+        padding-bottom: 10px;
       }
 
       /* Main Container */
@@ -157,6 +158,7 @@
         line-height: 1.25;
         font-weight: 300;
         letter-spacing: 0.05em;
+        font-family: "noto sans-serif";
       }
 
       @container (min-width: 1px) {
@@ -173,7 +175,7 @@
 
       @container (min-width: 1px) {
         .number-indicator .divider {
-          padding: 0 0.5cqmin;
+          /*padding: 0 0.5cqmin;*/
         }
       }
 
@@ -353,22 +355,23 @@
 
       .title-heading {
         font-size: 1.25rem;
-        font-weight: 500;
+        font-weight: 400;
         letter-spacing: 0.05em;
       }
 
       @container (min-width: 1px) {
         .title-heading {
-          font-size: min(3.5cqmin, 24px);
+          font-size: min(3.5cqmin, 18px);
         }
       }
 
       .description-text {
         font-size: 0.875rem;
-        line-height: 1.8;
-        letter-spacing: 2px;
+        line-height: 1.6;
+        letter-spacing: 1px;
         text-align: justify;
         white-space: pre-wrap;
+        opacity: .96;
       }
 
       @container (min-width: 1px) {
@@ -426,7 +429,7 @@
           font-size: 16px !important;
         }
         .title-heading {
-          font-size: 24px !important;
+          font-size: 18px !important;
         }
         .description-text {
           font-size: 16px !important;
@@ -1004,10 +1007,18 @@
         visibility: hidden;
       }
     </style>
-  <script src="/_aistudio-iframe.js"></script><script src="https://cdn.jsdelivr.net/npm/html2canvas-pro"></script><style>.aistudio-hover-highlight { box-shadow: inset 0 0 0 0.5px white, inset 0 0 0 1.5px rgba(128,128,128,0.6) !important; }.aistudio-active-highlight { outline: 2px solid #87a9ff !important; outline-offset: -2px !important; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.3), inset 0 0 0 0.5px rgba(0,0,0,0.3) !important; border-radius: inherit !important; }.aistudio-generating-blur { filter: blur(5px) grayscale(100%) brightness(28%) !important; transition: filter 0.3s ease; }#aistudio-focus-mode-tag { position: absolute; display: none; align-items: center; gap: 4px; background: #87a9ff; border-radius: 12px; z-index: 10000; padding: 8px; color: #32302c; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 500; line-height: 21px; pointer-events: none; }#aistudio-hover-mode-tag { position: absolute; display: none; align-items: center; gap: 4px; background: rgba(128,128,128,0.6); border-radius: 12px; z-index: 10000; padding: 8px; color: white; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 500; line-height: 21px; pointer-events: none; }.aistudio-img-icon { display: none; vertical-align: middle; pointer-events: auto; cursor: pointer; }.aistudio-img-icon.visible { display: inline-flex; }#aistudio-focus-mode-tag .aistudio-img-icon { position: relative; width: 26px; height: 26px; background: #32302c; border-radius: 6px; margin: -4px -4px -4px 0; }#aistudio-focus-mode-tag .aistudio-img-icon::before { content: ""; position: absolute; top: 4px; left: 4px; width: 18px; height: 18px; background-color: white; -webkit-mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); mask-size: contain; mask-repeat: no-repeat; }#aistudio-hover-mode-tag .aistudio-img-icon { position: relative; width: 18px; height: 18px; margin-left: 4px; }#aistudio-hover-mode-tag .aistudio-img-icon::before { content: ""; position: absolute; top: 0; left: 0; width: 18px; height: 18px; background-color: white; -webkit-mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); mask-size: contain; mask-repeat: no-repeat; }#aistudio-focus-mode-tag .aistudio-img-icon:hover, #aistudio-hover-mode-tag .aistudio-img-icon:hover { background: #424242 !important; }#aistudio-focus-mode-tag .aistudio-img-icon:active, #aistudio-hover-mode-tag .aistudio-img-icon:active { background: #393f51 !important; }</style></head>
+  <script src="/_aistudio-iframe.js"></script><script src="https://cdn.jsdelivr.net/npm/html2canvas-pro"></script><style>.aistudio-hover-highlight { box-shadow: inset 0 0 0 0.5px white, inset 0 0 0 1.5px rgba(128,128,128,0.6) !important; }.aistudio-active-highlight { outline: 2px solid #87a9ff !important; outline-offset: -2px !important; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.3), inset 0 0 0 0.5px rgba(0,0,0,0.3) !important; border-radius: inherit !important; }.aistudio-generating-blur { filter: blur(5px) grayscale(100%) brightness(28%) !important; transition: filter 0.3s ease; }#aistudio-focus-mode-tag { position: absolute; display: none; align-items: center; gap: 4px; background: #87a9ff; border-radius: 12px; z-index: 10000; padding: 8px; color: #32302c; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 500; line-height: 21px; pointer-events: none; }#aistudio-hover-mode-tag { position: absolute; display: none; align-items: center; gap: 4px; background: rgba(128,128,128,0.6); border-radius: 12px; z-index: 10000; padding: 8px; color: white; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 500; line-height: 21px; pointer-events: none; }.aistudio-img-icon { display: none; vertical-align: middle; pointer-events: auto; cursor: pointer; }.aistudio-img-icon.visible { display: inline-flex; }#aistudio-focus-mode-tag .aistudio-img-icon { position: relative; width: 26px; height: 26px; background: #32302c; border-radius: 6px; margin: -4px -4px -4px 0; }#aistudio-focus-mode-tag .aistudio-img-icon::before { content: ""; position: absolute; top: 4px; left: 4px; width: 18px; height: 18px; background-color: white; -webkit-mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); mask-size: contain; mask-repeat: no-repeat; }#aistudio-hover-mode-tag .aistudio-img-icon { position: relative; width: 18px; height: 18px; margin-left: 4px; }#aistudio-hover-mode-tag .aistudio-img-icon::before { content: ""; position: absolute; top: 0; left: 0; width: 18px; height: 18px; background-color: white; -webkit-mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); mask-size: contain; mask-repeat: no-repeat; }#aistudio-focus-mode-tag .aistudio-img-icon:hover, #aistudio-hover-mode-tag .aistudio-img-icon:hover { background: #424242 !important; }#aistudio-focus-mode-tag .aistudio-img-icon:active, #aistudio-hover-mode-tag .aistudio-img-icon:active { background: #393f51 !important; }</style><style id="gridman-extension-fonts">
+  @font-face {
+    font-display: auto;
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 500;
+    src: url("chrome-extension://cmplbmppmfboedgkkelpkfgaakabpicn/fonts/SF-Pro-Display-Regular.ttf") format("truetype");
+  }
+</style></head>
   <body style="">
     <!-- Floating Settings Gear -->
-    <button id="settings-trigger" class="settings-toggle" title="編輯內容" style="display: none;">
+    <button id="settings-trigger" class="settings-toggle" title="編輯內容" style="display: block;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
         <circle cx="12" cy="12" r="3"></circle>
@@ -1082,13 +1093,13 @@
         <div class="form-group">
           <label class="form-label">選擇區塊 (Select Block)</label>
           <select id="editor-select-block" class="form-select">
-        <option value="0">區塊 1 - 品牌網站</option>
+        <option value="0" selected="">區塊 1 - 品牌網站</option>
       
         <option value="1">區塊 2 - 宣傳網站</option>
       
         <option value="2">區塊 3 - 活動網站</option>
       
-        <option value="3" selected="">區塊 4 - 時尚網站</option>
+        <option value="3">區塊 4 - 時尚網站</option>
       
         <option value="4">區塊 5 - 影像裝置</option>
       
@@ -2191,4 +2202,4 @@
     </script>
   
 
-</body></html>
+<div id="gridmanWrapper" style="position: fixed; height: 0px; width: 0px; z-index: 99999; top: 0px; left: 0px;"></div></body></html>
