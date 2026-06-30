@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-TW"><head>
-    
-
+<html lang="zh-TW">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>朱 怡姿 | yitzu.chu@gmail.com</title>
@@ -10,18 +9,10 @@
       @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap");
 
       :root {
-        --font-sans:
-          "Noto Sans TC", "PingFang TC", "Helvetica Neue", Helvetica,
-          Arial, sans-serif;
+        --font-sans: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
 
-      /* Reset & Base Styles */
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
         background-color: #000000;
@@ -30,18 +21,16 @@
         overflow-x: hidden;
         color: #ffffff;
       }
-			
-	 .description-text b {
+            
+      .description-text b {
         display: inline-block;
-	    font-weight: 500;
+        font-weight: 500;
         font-size: 20px;
         line-height: 1.25;
         padding-bottom: 10px;
         text-wrap: pretty;
         text-align: left;
       }
-
-      /* Main Container */
 
       .app-container {
         display: flex;
@@ -58,8 +47,6 @@
           overflow: hidden;
         }
       }
-
-      /* Floating settings toggles */
 
       .settings-toggle {
         position: fixed;
@@ -84,8 +71,6 @@
         background: rgba(255, 255, 255, 0.2);
       }
 
-      /* Block Elements */
-
       .block-element {
         position: relative;
         width: 100%;
@@ -103,8 +88,6 @@
           min-height: 0;
         }
       }
-
-      /* Inner Layout & Container Queries */
 
       .block-inner-content {
         container-type: inline-size;
@@ -135,8 +118,6 @@
         }
       }
 
-      /* Block Header Section */
-
       .header-section {
         display: flex;
         flex-direction: column;
@@ -149,10 +130,7 @@
       }
 
       @container (min-width: 1px) {
-        .header-section {
-          margin-bottom: 1.5cqmin;
-          gap: 1.5cqmin;
-        }
+        .header-section { margin-bottom: 1.5cqmin; gap: 1.5cqmin; }
       }
 
       .number-indicator {
@@ -164,9 +142,7 @@
       }
 
       @container (min-width: 1px) {
-        .number-indicator {
-          font-size: min(2cqmin, 16px);
-        }
+        .number-indicator { font-size: min(2cqmin, 16px); }
       }
 
       .number-indicator .divider {
@@ -175,21 +151,13 @@
         padding: 0 0.125rem;
       }
 
-      @container (min-width: 1px) {
-        .number-indicator .divider {
-          /*padding: 0 0.5cqmin;*/
-        }
-      }
-
       .number-indicator .total {
         font-size: 10px;
         font-weight: 300;
       }
 
       @container (min-width: 1px) {
-        .number-indicator .total {
-          font-size: min(1.5cqmin, 10px);
-        }
+        .number-indicator .total { font-size: min(1.5cqmin, 10px); }
       }
 
       .category-heading {
@@ -199,12 +167,8 @@
       }
 
       @container (min-width: 1px) {
-        .category-heading {
-          font-size: min(2.5cqmin, 16px);
-        }
+        .category-heading { font-size: min(2.5cqmin, 16px); }
       }
-
-      /* Media Visualizer Section */
 
       .media-section {
         flex: 1;
@@ -218,9 +182,7 @@
       }
 
       @media (min-width: 1024px) {
-        .media-section {
-          margin: 0;
-        }
+        .media-section { margin: 0; }
       }
 
       .media-container-inner {
@@ -258,32 +220,16 @@
         }
       }
 
-      .media-item.aspect-video {
-        aspect-ratio: 16/9;
-      }
-
-      .media-item.aspect-vertical {
-        aspect-ratio: 9/16;
-      }
-
-      .media-item.aspect-square {
-        aspect-ratio: 1/1;
-      }
-
-      .media-item.aspect-auto {
-        aspect-ratio: auto;
-        /* max-height: 300px; */
-      }
+      .media-item.aspect-video { aspect-ratio: 16/9; }
+      .media-item.aspect-vertical { aspect-ratio: 9/16; }
+      .media-item.aspect-square { aspect-ratio: 1/1; }
+      .media-item.aspect-auto { aspect-ratio: auto; }
 
       @media (min-width: 1024px) {
-        .media-item.aspect-auto {
-          max-height: 100%;
-        }
+        .media-item.aspect-auto { max-height: 100%; }
       }
 
-      .video-iframe,
-      .media-img,
-      .lottie-player {
+      .video-iframe, .media-img, .lottie-player {
         position: absolute;
         top: 0;
         left: 0;
@@ -292,9 +238,7 @@
         border: none;
       }
 
-      .media-img {
-        object-fit: cover;
-      }
+      .media-img { object-fit: cover; }
 
       .no-media-message {
         display: flex;
@@ -315,8 +259,6 @@
           aspect-ratio: 16/9;
         }
       }
-
-      /* Footer Section */
 
       .footer-section {
         display: flex;
@@ -362,9 +304,7 @@
       }
 
       @container (min-width: 1px) {
-        .title-heading {
-          font-size: min(3.5cqmin, 18px);
-        }
+        .title-heading { font-size: min(3.5cqmin, 18px); }
       }
 
       .description-text {
@@ -377,19 +317,13 @@
       }
 
       @container (min-width: 1px) {
-        .description-text {
-          font-size: min(2.2cqmin, 16px);
-        }
+        .description-text { font-size: min(2.2cqmin, 16px); }
       }
 
-      .highlight-span {
-        padding-bottom: 0.1rem;
-      }
+      .highlight-span { padding-bottom: 0.1rem; }
 
       @container (min-width: 1px) {
-        .highlight-span {
-          padding-bottom: 0.25cqmin;
-        }
+        .highlight-span { padding-bottom: 0.25cqmin; }
       }
 
       .tools-indicator {
@@ -402,9 +336,7 @@
       }
 
       @container (min-width: 1px) {
-        .tools-indicator {
-          font-size: min(1.8cqmin, 14px);
-        }
+        .tools-indicator { font-size: min(1.8cqmin, 14px); }
       }
 
       .tools-label {
@@ -415,9 +347,7 @@
       }
 
       @container (min-width: 1px) {
-        .tools-label {
-          margin-right: 0.8cqmin;
-        }
+        .tools-label { margin-right: 0.8cqmin; }
       }
 
       .tools-value {
@@ -427,32 +357,15 @@
       }
 
       @media (max-width: 1023px) {
-        .category-heading {
-          font-size: 16px !important;
-        }
-        .title-heading {
-          font-size: 18px !important;
-        }
-        .description-text {
-          font-size: 16px !important;
-        }
-        .tools-indicator {
-          font-size: 14px !important;
-        }
-        .number-indicator,
-        .number-indicator .divider {
-          font-size: 16px !important;
-        }
-        .number-indicator .total {
-          font-size: 10px !important;
-        }
+        .category-heading { font-size: 16px !important; }
+        .title-heading { font-size: 18px !important; }
+        .description-text { font-size: 16px !important; }
+        .tools-indicator { font-size: 14px !important; }
+        .number-indicator, .number-indicator .divider { font-size: 16px !important; }
+        .number-indicator .total { font-size: 10px !important; }
       }
 
-      /* Unhovered Subtle Overlay */
-
-      .unhovered-overlay {
-        display: none;
-      }
+      .unhovered-overlay { display: none; }
 
       @media (min-width: 1024px) {
         .unhovered-overlay {
@@ -470,8 +383,6 @@
         }
       }
 
-      /* Action Link (Row Layout) */
-
       .action-link {
         position: relative;
         display: inline-block;
@@ -487,9 +398,7 @@
         transition: opacity 0.2s ease;
       }
 
-      .action-link:hover {
-        opacity: 1;
-      }
+      .action-link:hover { opacity: 1; }
 
       .action-link:after {
         position: absolute;
@@ -508,27 +417,17 @@
       }
 
       @container (min-width: 1px) {
-        .action-link {
-          font-size: min(2cqmin, 16px);
-        }
+        .action-link { font-size: min(2cqmin, 16px); }
       }
 
       @media (max-width: 1023px) {
-        .action-link {
-          font-size: 14px !important;
-        }
-
-        .block-inner-content.layout-row {
-          gap: 0;
-          justify-content: space-between;
-        }
+        .action-link { font-size: 14px !important; }
+        .block-inner-content.layout-row { gap: 0; justify-content: space-between; }
       }
-
-      /* layout-row specific styles */
 
       .block-inner-content.layout-row {
         display: flex;
-        flex-direction: column; /* Stacked on mobile */
+        flex-direction: column;
         gap: 0;
         justify-content: space-between;
       }
@@ -552,9 +451,7 @@
           grid-template-columns: calc(50% - 2cqmin) calc(50% - 2cqmin);
           column-gap: 4cqmin;
           grid-template-rows: auto 1fr;
-          grid-template-areas:
-            "header media"
-            "footer media";
+          grid-template-areas: "header media" "footer media";
           align-items: stretch;
         }
         .block-inner-content.layout-row .header-section {
@@ -570,9 +467,7 @@
           gap: 3cqmin;
           align-self: end;
         }
-        .block-inner-content.layout-row .text-info {
-          width: 80%;
-        }
+        .block-inner-content.layout-row .text-info { width: 80%; }
         .block-inner-content.layout-row .right-column {
           grid-area: media;
           margin: 0;
@@ -601,14 +496,10 @@
         .block-inner-content.layout-row .right-column .media-item iframe {
           position: relative;
           max-height: 100%;
-          /*width: auto;*/
           max-width: 100%;
           object-fit: contain;
         }
-        .block-inner-content.layout-row
-          .right-column
-          .media-item
-          dotlottie-player {
+        .block-inner-content.layout-row .right-column .media-item dotlottie-player {
           position: relative;
           width: 100%;
           height: auto;
@@ -616,8 +507,6 @@
           object-fit: contain;
         }
       }
-
-      /* Editor Overlay Panel styling */
 
       .editor-panel {
         position: fixed;
@@ -637,9 +526,7 @@
       }
 
       @media (min-width: 768px) {
-        .editor-panel {
-          width: 384px; /* w-96 equivalent */
-        }
+        .editor-panel { width: 384px; }
       }
 
       .editor-panel.open {
@@ -648,12 +535,8 @@
       }
 
       @keyframes slideIn {
-        from {
-          transform: translateX(100%);
-        }
-        to {
-          transform: translateX(0);
-        }
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
       }
 
       .editor-header {
@@ -661,7 +544,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 1.5rem;
-        border-b: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         flex-shrink: 0;
       }
 
@@ -684,9 +567,7 @@
         transition: background-color 200ms ease;
       }
 
-      .editor-close:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-      }
+      .editor-close:hover { background-color: rgba(255, 255, 255, 0.1); }
 
       .editor-content {
         flex: 1;
@@ -708,14 +589,9 @@
         color: rgba(255, 255, 255, 0.6);
       }
 
-      .form-sublabel {
-        font-size: 0.75rem;
-        opacity: 0.5;
-      }
+      .form-sublabel { font-size: 0.75rem; opacity: 0.5; }
 
-      .form-select,
-      .form-input,
-      .form-textarea {
+      .form-select, .form-input, .form-textarea {
         width: 100%;
         background-color: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -728,15 +604,11 @@
         transition: border-color 200ms ease;
       }
 
-      .form-select:focus,
-      .form-input:focus,
-      .form-textarea:focus {
+      .form-select:focus, .form-input:focus, .form-textarea:focus {
         border-color: rgba(255, 255, 255, 0.3);
       }
 
-      .form-select option {
-        background-color: #111111;
-      }
+      .form-select option { background-color: #111111; }
 
       .colors-grid {
         display: grid;
@@ -792,11 +664,7 @@
         gap: 0.5rem;
       }
 
-      .export-btn:hover {
-        background-color: #e5e5e5;
-      }
-
-      /* Go to top button styles */
+      .export-btn:hover { background-color: #e5e5e5; }
 
       .go-to-top {
         position: fixed;
@@ -816,39 +684,20 @@
         border: none;
         opacity: 0;
         visibility: hidden;
-        transition:
-          letter-spacing 0.4s ease,
-          opacity 0.3s ease,
-          visibility 0.3s ease;
+        transition: letter-spacing 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
         z-index: 50;
         mix-blend-mode: difference;
       }
 
-      .go-to-top.visible {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .go-to-top:hover {
-        letter-spacing: 2px;
-      }
-
-      /* Sticker Animation */
+      .go-to-top.visible { opacity: 1; visibility: visible; }
+      .go-to-top:hover { letter-spacing: 2px; }
 
       @keyframes stickerWobble {
-        0% {
-          transform: rotate(-30deg);
-        }
-        100% {
-          transform: rotate(30deg);
-        }
+        0% { transform: rotate(-30deg); }
+        100% { transform: rotate(30deg); }
       }
 
-      .animate-sticker {
-        animation: stickerWobble 1.6s ease-in-out infinite alternate;
-      }
-
-      /* Intro Sidebar styles */
+      .animate-sticker { animation: stickerWobble 1.6s ease-in-out infinite alternate; }
 
       .sidebar-backdrop {
         position: fixed;
@@ -860,10 +709,7 @@
         transition: all 0.4s ease;
       }
 
-      .sidebar-backdrop.open {
-        opacity: 1;
-        visibility: visible;
-      }
+      .sidebar-backdrop.open { opacity: 1; visibility: visible; }
 
       .sidebar-panel {
         position: fixed;
@@ -881,15 +727,9 @@
         transition: transform 0.4s ease;
       }
 
-      .sidebar-panel.open {
-        transform: translateX(0);
-      }
+      .sidebar-panel.open { transform: translateX(0); }
 
-      @media (min-width: 768px) {
-        .sidebar-panel {
-          padding: 0 15vw;
-        }
-      }
+      @media (min-width: 768px) { .sidebar-panel { padding: 0 15vw; } }
 
       .sidebar-content-wrapper {
         position: relative;
@@ -907,11 +747,7 @@
         scrollbar-width: thin;
       }
 
-      @media (min-width: 768px) {
-        .sidebar-content-wrapper {
-          padding-left: 10vw;
-        }
-      }
+      @media (min-width: 768px) { .sidebar-content-wrapper { padding-left: 10vw; } }
 
       .close-sidebar-btn {
         position: fixed;
@@ -934,9 +770,7 @@
         z-index: 1000;
       }
 
-      .close-sidebar-btn:hover {
-        letter-spacing: 2px;
-      }
+      .close-sidebar-btn:hover { letter-spacing: 2px; }
 
       .sidebar-title {
         display: flex;
@@ -963,7 +797,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-				display: block;
+        display: block;
       }
 
       .sidebar-text-container {
@@ -974,9 +808,7 @@
         text-align: justify;
       }
 
-      .sidebar-text-container p {
-        margin-bottom: 1rem;
-      }
+      .sidebar-text-container p { margin-bottom: 1rem; }
 
       .sidebar-email {
         font-size: 0.875rem;
@@ -999,27 +831,13 @@
         border: none;
         background: transparent;
         padding: 0;
-        transition:
-          opacity 0.4s ease,
-          visibility 0.4s ease;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
       }
 
-      .sticker-btn.hidden-sticker {
-        opacity: 0;
-        visibility: hidden;
-      }
+      .sticker-btn.hidden-sticker { opacity: 0; visibility: hidden; }
     </style>
-  <script src="/_aistudio-iframe.js"></script><script src="https://cdn.jsdelivr.net/npm/html2canvas-pro"></script><style>.aistudio-hover-highlight { box-shadow: inset 0 0 0 0.5px white, inset 0 0 0 1.5px rgba(128,128,128,0.6) !important; }.aistudio-active-highlight { outline: 2px solid #87a9ff !important; outline-offset: -2px !important; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.3), inset 0 0 0 0.5px rgba(0,0,0,0.3) !important; border-radius: inherit !important; }.aistudio-generating-blur { filter: blur(5px) grayscale(100%) brightness(28%) !important; transition: filter 0.3s ease; }#aistudio-focus-mode-tag { position: absolute; display: none; align-items: center; gap: 4px; background: #87a9ff; border-radius: 12px; z-index: 10000; padding: 8px; color: #32302c; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 500; line-height: 21px; pointer-events: none; }#aistudio-hover-mode-tag { position: absolute; display: none; align-items: center; gap: 4px; background: rgba(128,128,128,0.6); border-radius: 12px; z-index: 10000; padding: 8px; color: white; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 500; line-height: 21px; pointer-events: none; }.aistudio-img-icon { display: none; vertical-align: middle; pointer-events: auto; cursor: pointer; }.aistudio-img-icon.visible { display: inline-flex; }#aistudio-focus-mode-tag .aistudio-img-icon { position: relative; width: 26px; height: 26px; background: #32302c; border-radius: 6px; margin: -4px -4px -4px 0; }#aistudio-focus-mode-tag .aistudio-img-icon::before { content: ""; position: absolute; top: 4px; left: 4px; width: 18px; height: 18px; background-color: white; -webkit-mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); mask-size: contain; mask-repeat: no-repeat; }#aistudio-hover-mode-tag .aistudio-img-icon { position: relative; width: 18px; height: 18px; margin-left: 4px; }#aistudio-hover-mode-tag .aistudio-img-icon::before { content: ""; position: absolute; top: 0; left: 0; width: 18px; height: 18px; background-color: white; -webkit-mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); mask-size: contain; mask-repeat: no-repeat; }#aistudio-focus-mode-tag .aistudio-img-icon:hover, #aistudio-hover-mode-tag .aistudio-img-icon:hover { background: #424242 !important; }#aistudio-focus-mode-tag .aistudio-img-icon:active, #aistudio-hover-mode-tag .aistudio-img-icon:active { background: #393f51 !important; }</style><style id="gridman-extension-fonts">
-  @font-face {
-    font-display: auto;
-    font-family: "SF Pro Display";
-    font-style: normal;
-    font-weight: 500;
-    src: url("chrome-extension://cmplbmppmfboedgkkelpkfgaakabpicn/fonts/SF-Pro-Display-Regular.ttf") format("truetype");
-  }
-</style></head>
-  <body style="">
-    <!-- Floating Settings Gear -->
+</head>
+<body>
     <button id="settings-trigger" class="settings-toggle" title="編輯內容" style="display: none;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
@@ -1027,21 +845,17 @@
       </svg>
     </button>
 
-    <!-- Intro Sidebar Backdrop -->
     <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
 
-    <!-- Intro Sidebar -->
     <div id="sidebar-panel" class="sidebar-panel">
       <div class="sidebar-content-wrapper">
         <button id="close-sidebar" class="close-sidebar-btn">[ ╳ ]</button>
-
         <h1 class="sidebar-title">
           <div class="sidebar-avatar-wrapper">
             <img src="https://ytchu.github.io/portfolio/web/img/ID.jpg" alt="朱怡姿" class="sidebar-avatar-img">
           </div>
           <span style="padding-left: 8px">朱 怡姿</span>
         </h1>
-
         <div class="sidebar-text-container">
           <p>
             目前任職於聯合新聞網資深視覺設計師。擁有豐富的視覺與網頁設計開發經驗<b>善於將介面設計、互動效果與品牌視覺延伸，並以結構化策略與設計美感打造產品的完整度與一致性</b>。
@@ -1066,20 +880,18 @@
       </div>
     </div>
 
-    <!-- Sticker -->
     <button id="sticker" class="sticker-btn animate-sticker">
       <img src="https://ytchu.github.io/portfolio/web/img/ID.jpg" alt="Profile" class="sidebar-avatar-img">
     </button>
 
-    <!-- Go to Top -->
     <button id="goToTop" class="go-to-top" aria-label="Go to top">
       [ top ]
     </button>
 
-    <!-- App Main Layout Container -->
-    <div id="app-container" class="app-container"><div id="block-0" class="block-element"></div><div id="block-1" class="block-element"></div><div id="block-2" class="block-element"></div><div id="block-3" class="block-element"></div><div id="block-4" class="block-element"></div><div id="block-5" class="block-element"></div><div id="block-6" class="block-element"></div><div id="block-7" class="block-element"></div></div>
+    <div id="app-container" class="app-container">
+      <!-- Blocks will be injected here -->
+    </div>
 
-    <!-- Sliding Editor Sidebar Panel -->
     <div id="editor-panel" class="editor-panel">
       <div class="editor-header">
         <h3 class="editor-title">編輯區塊內容</h3>
@@ -1094,23 +906,7 @@
       <div class="editor-content">
         <div class="form-group">
           <label class="form-label">選擇區塊 (Select Block)</label>
-          <select id="editor-select-block" class="form-select">
-        <option value="0">區塊 1 - 品牌網站</option>
-      
-        <option value="1" selected="">區塊 2 - 宣傳網站</option>
-      
-        <option value="2">區塊 3 - 活動網站</option>
-      
-        <option value="3">區塊 4 - 時尚網站</option>
-      
-        <option value="4">區塊 5 - 影像裝置</option>
-      
-        <option value="5">區塊 6 - 前台</option>
-      
-        <option value="6">區塊 7 - 會員後台</option>
-      
-        <option value="7">區塊 8 - 數據圖表</option>
-      </select>
+          <select id="editor-select-block" class="form-select"></select>
         </div>
 
         <div class="form-group">
@@ -1131,43 +927,11 @@
             <input type="color" id="editor-text-color" class="color-picker">
           </div>
           <div class="color-input-container">
-            <div style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              ">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
               <label class="form-label form-sublabel">重點色</label>
               <div style="display: flex; gap: 4px">
-                <button type="button" onclick="
-                    document.getElementById('editor-highlight-color').value =
-                      '#d7ffb8';
-                    document
-                      .getElementById('editor-highlight-color')
-                      .dispatchEvent(new Event('input'));
-                  " style="
-                    width: 14px;
-                    height: 14px;
-                    border-radius: 50%;
-                    background-color: #d7ffb8;
-                    border: 1px solid rgba(255, 255, 255, 0.3);
-                    cursor: pointer;
-                    padding: 0;
-                  " title="#d7ffb8"></button>
-                <button type="button" onclick="
-                    document.getElementById('editor-highlight-color').value =
-                      '#0000001f';
-                    document
-                      .getElementById('editor-highlight-color')
-                      .dispatchEvent(new Event('input'));
-                  " style="
-                    width: 14px;
-                    height: 14px;
-                    border-radius: 50%;
-                    background-color: #0000001f;
-                    border: 1px solid rgba(255, 255, 255, 0.3);
-                    cursor: pointer;
-                    padding: 0;
-                  " title="#0000001f"></button>
+                <button type="button" onclick="setHighlightColor('#d7ffb8')" style="width: 14px; height: 14px; border-radius: 50%; background-color: #d7ffb8; border: 1px solid rgba(255, 255, 255, 0.3); cursor: pointer; padding: 0;" title="#d7ffb8"></button>
+                <button type="button" onclick="setHighlightColor('#0000001f')" style="width: 14px; height: 14px; border-radius: 50%; background-color: #0000001f; border: 1px solid rgba(255, 255, 255, 0.3); cursor: pointer; padding: 0;" title="#0000001f"></button>
               </div>
             </div>
             <input type="text" id="editor-highlight-color" class="form-input" style="height: 2.5rem; padding: 0.3rem 0.5rem; font-size: 0.75rem" placeholder="#RRGGBB">
@@ -1206,22 +970,18 @@
 
         <div class="section-divider">
           <h4 class="media-section-title">媒體設定 (Media)</h4>
-
           <div class="form-group" style="margin-bottom: 1rem">
             <label class="form-label">圖片連結 (Image URL)</label>
             <input type="text" id="editor-image-url" placeholder="https://example.com/image.png" class="form-input">
           </div>
-
           <div class="form-group" style="margin-bottom: 1rem">
             <label class="form-label">DotLottie 動畫連結 (.lottie URL)</label>
             <input type="text" id="editor-lottie-url" placeholder="https://example.com/animation.lottie" class="form-input">
           </div>
-
           <div class="form-group" style="margin-bottom: 1rem">
             <label class="form-label">影片連結 1 (Video 1 Vimeo/Embed URL)</label>
             <input type="text" id="editor-video1-url" class="form-input">
           </div>
-
           <div class="form-group">
             <label class="form-label">影片連結 2 (Video 2 Vimeo/Embed URL)</label>
             <input type="text" id="editor-video2-url" class="form-input">
@@ -1229,7 +989,6 @@
               此系統支援同時顯示最多 2 個填入的媒體資源項目。
             </p>
           </div>
-
           <button id="editor-export" class="export-btn">儲存並下載 HTML</button>
         </div>
       </div>
@@ -1292,7 +1051,7 @@
     "title": "專案定位",
     "description": "<b>時尚媒體網站重構 — 跨世代體驗升級與商業版位留存策略</b>\n核心解法在延續經典色系下重組資訊架構，將既有廣告無縫導入新版響應式網格。視覺採灰階中性色搭配規律排版，使內容成為焦點；並*透過懸停軸線與圖片亮度的細膩微互動精準引導視線。在優化跨世代用戶體驗與守護既有商業價值的同時，完美平衡商業變現與系統升級需求*。",
     "tools": "Figma",
-    "video1Url": "https://player.vimeo.com/video/1109498668?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+    "video1Url": "https://player.vimeo.com/video/1109498668?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
     "video2Url": "https://player.vimeo.com/video/1110539479?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
     "imageUrl": "",
     "lottieUrl": "",
@@ -1326,7 +1085,7 @@
     "title": "專案定位",
     "description": "<b>愛體驗入口 — 女性媒體品牌延展與高轉化表單設計</b>\n以「品牌一致、結構清晰、高效操作」為核心，建構兼顧品牌感與高轉化的體驗入口。核心解法以導入直覺輸入框、清晰必填提示與結構化選項，大幅降低填寫阻力。*透過一頁式設計減少跳轉，在延續女子漾品牌視覺的同時，以試用表單體驗，提升產品黏著度與商務轉化指標*。",
     "tools": "Figma",
-    "video1Url": "https://player.vimeo.com/video/1111318807?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+    "video1Url": "https://player.vimeo.com/video/1111318807?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
     "video2Url": "",
     "imageUrl": "",
     "lottieUrl": "",
@@ -1341,7 +1100,7 @@
     "title": "專案定位",
     "description": "<b>創作者一站式管理後台 — 多功能整合與低認知負載系統設計</b>\n面對「創作者需頻繁切換投稿、收益與體驗活動等繁雜功能」的挑戰。核心解法，重組高密度數據，將多源收益、稿件進度與活動申請整合為一站式後台。*透過統一跨分頁操作邏輯與清晰的表格式排版，以「低認知負載」的極致系統效率，大幅降低使用者的學習成本與操作阻力*。",
     "tools": " Figma",
-    "video1Url": "https://player.vimeo.com/video/1111342509?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+    "video1Url": "https://player.vimeo.com/video/1111342509?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
     "video2Url": "",
     "imageUrl": "",
     "lottieUrl": "",
@@ -1365,273 +1124,56 @@
     "linkLabel": "專案介紹"
   }
 ]
-  </script>
+    </script>
     <script>
-      // Grid Layout specifications matching React LAYOUTS structure
       const LAYOUTS = {
-        TL: [
-          { x: 0, y: 0, w: 3, h: 3 },
-          { x: 3, y: 0, w: 2, h: 2 },
-          { x: 0, y: 3, w: 2, h: 2 },
-          { x: 3, y: 3, w: 2, h: 2 },
-          { x: 3, y: 2, w: 1, h: 1 },
-          { x: 4, y: 2, w: 1, h: 1 },
-          { x: 2, y: 3, w: 1, h: 1 },
-          { x: 2, y: 4, w: 1, h: 1 },
-        ],
-        TR: [
-          { x: 2, y: 0, w: 3, h: 3 },
-          { x: 0, y: 0, w: 2, h: 2 },
-          { x: 3, y: 3, w: 2, h: 2 },
-          { x: 0, y: 3, w: 2, h: 2 },
-          { x: 1, y: 2, w: 1, h: 1 },
-          { x: 0, y: 2, w: 1, h: 1 },
-          { x: 2, y: 3, w: 1, h: 1 },
-          { x: 2, y: 4, w: 1, h: 1 },
-        ],
-        BL: [
-          { x: 0, y: 2, w: 3, h: 3 },
-          { x: 3, y: 3, w: 2, h: 2 },
-          { x: 0, y: 0, w: 2, h: 2 },
-          { x: 3, y: 0, w: 2, h: 2 },
-          { x: 3, y: 2, w: 1, h: 1 },
-          { x: 4, y: 2, w: 1, h: 1 },
-          { x: 2, y: 1, w: 1, h: 1 },
-          { x: 2, y: 0, w: 1, h: 1 },
-        ],
-        BR: [
-          { x: 2, y: 2, w: 3, h: 3 },
-          { x: 0, y: 3, w: 2, h: 2 },
-          { x: 3, y: 0, w: 2, h: 2 },
-          { x: 0, y: 0, w: 2, h: 2 },
-          { x: 1, y: 2, w: 1, h: 1 },
-          { x: 0, y: 2, w: 1, h: 1 },
-          { x: 2, y: 1, w: 1, h: 1 },
-          { x: 2, y: 0, w: 1, h: 1 },
-        ],
+        TL: [{ x: 0, y: 0, w: 3, h: 3 }, { x: 3, y: 0, w: 2, h: 2 }, { x: 0, y: 3, w: 2, h: 2 }, { x: 3, y: 3, w: 2, h: 2 }, { x: 3, y: 2, w: 1, h: 1 }, { x: 4, y: 2, w: 1, h: 1 }, { x: 2, y: 3, w: 1, h: 1 }, { x: 2, y: 4, w: 1, h: 1 }],
+        TR: [{ x: 2, y: 0, w: 3, h: 3 }, { x: 0, y: 0, w: 2, h: 2 }, { x: 3, y: 3, w: 2, h: 2 }, { x: 0, y: 3, w: 2, h: 2 }, { x: 1, y: 2, w: 1, h: 1 }, { x: 0, y: 2, w: 1, h: 1 }, { x: 2, y: 3, w: 1, h: 1 }, { x: 2, y: 4, w: 1, h: 1 }],
+        BL: [{ x: 0, y: 2, w: 3, h: 3 }, { x: 3, y: 3, w: 2, h: 2 }, { x: 0, y: 0, w: 2, h: 2 }, { x: 3, y: 0, w: 2, h: 2 }, { x: 3, y: 2, w: 1, h: 1 }, { x: 4, y: 2, w: 1, h: 1 }, { x: 2, y: 1, w: 1, h: 1 }, { x: 2, y: 0, w: 1, h: 1 }],
+        BR: [{ x: 2, y: 2, w: 3, h: 3 }, { x: 0, y: 3, w: 2, h: 2 }, { x: 3, y: 0, w: 2, h: 2 }, { x: 0, y: 0, w: 2, h: 2 }, { x: 1, y: 2, w: 1, h: 1 }, { x: 0, y: 2, w: 1, h: 1 }, { x: 2, y: 1, w: 1, h: 1 }, { x: 2, y: 0, w: 1, h: 1 }],
       };
 
-      const DEFAULT_COLORS = [
-        "#EEEEEE",
-        "#2563EB",
-        "#F97316",
-        "#DB2777",
-        "#9333EA",
-        "#06B6D4",
-        "#10B981",
-        "#EAB308",
-      ];
-
-      // Initialize application state
       let blocks = [];
       try {
         const appDataScript = document.getElementById("app-data");
-        if (appDataScript && appDataScript.textContent.trim() !== "null") {
-          const parsedData = JSON.parse(appDataScript.textContent.trim());
-          if (
-            parsedData &&
-            Array.isArray(parsedData) &&
-            parsedData.length === 8
-          ) {
-            blocks = parsedData;
-          }
+        if (appDataScript && appDataScript.textContent.trim()) {
+          blocks = JSON.parse(appDataScript.textContent.trim());
         }
       } catch (e) {
         console.error("Failed to parse app-data", e);
       }
 
-      if (!blocks || blocks.length === 0) {
-        blocks = [
-          {
-            id: 0,
-            backgroundColor: "#EEEEEE",
-            textColor: "#111111",
-            highlightColor: "#D7FFB8",
-            category: "網站",
-            title: "設計概念",
-            description:
-              "網站以嚴謹網格、寬鬆留白與極簡 UI 構築通透版面，形塑生活美學。*區塊標題藉由幾何斜線破除方塊字僵硬感，左側主詞於第一時間抓取眼球點出區塊屬性，*再搭配字距的負空間，營造雜誌般的呼吸節奏。當*滑鼠懸停時，半透明雷射絢彩遮色片宛如產品瞬間被光芒照亮*，傳遞一種「經挑選的生活風格」。",
-            tools: "Figma",
-            video1Url:
-              "https://player.vimeo.com/video/1199184951?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-            video2Url:
-              "https://player.vimeo.com/video/1199315838?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-            imageUrl: "",
-            lottieUrl: "",
-          },
-          {
-            id: 1,
-            backgroundColor: "#ad513e",
-            textColor: "#FFFFFF",
-            highlightColor: "#9a4837",
-            category: "活動網站",
-            title: "設計概念",
-            description:
-              "結合扭蛋與圖鑑蒐集概念，打造具隨機性與成就感的互動體驗。以*大型扭蛋機與醒目的「登入抽扭蛋」按鈕作為行動呼籲，搭配圖鑑進度條引導使用者持續回訪參與*。部分插畫運用 ChatGPT 生成加上版面設計，呈現臺灣街頭小吃的日常與人情味。",
-            tools: "Figma / Chatgpt / Phase",
-            video1Url:
-              "https://player.vimeo.com/video/1110927058?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-            video2Url:
-              "https://player.vimeo.com/video/1110627648?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-            imageUrl: "",
-            lottieUrl: "",
-          },
-          {
-            id: 2,
-            backgroundColor: "#938074",
-            textColor: "#FFFFFF",
-            highlightColor: "#FAF089",
-            category: "網站",
-            title: "設計概念",
-            description:
-              "以灰階中性色為主調，搭配規律排版與細膩微互動，營造內斂、不干擾的瀏覽氛圍，使內容與圖片成為視覺焦點。金色點綴作為強調色，提升質感與精品氣息。*滑鼠懸停類別區塊觸發動畫軸線，懸停圖片提升亮度，引導視線聚焦並增添互動體驗*。",
-            tools: " Figma",
-            video1Url:
-              "https://player.vimeo.com/video/1109498668?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-            video2Url:
-              "https://player.vimeo.com/video/1110539479?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-            imageUrl: "",
-            lottieUrl: "",
-            linkUrl: "https://style.udn.com/",
-            linkLabel: "官方網站"
-          },
-          {
-            id: 3,
-            backgroundColor: "#040607",
-            textColor: "#ffffff",
-            highlightColor: "#0000001f",
-            category: "vibe coding",
-            title: "設計概念",
-            description: "這是一件將植栽常駐於影像中的實驗性裝置，造型試圖營造科技未來與現實的衝突感。靜置時，它是影像裝置；啟動後，玻璃數位介面串連全球氣候數據，並可透過介面切換，打破物理地域的限制，將世界各地的即時天色與白噪音導入室內，為空間帶來情境的轉換。",
-            tools: "Figma Make / Midjourney / Photoshop",
-            video1Url: "https://player.vimeo.com/video/1200516716?share=copy&fl=sv&fe=ci?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-            video2Url: "",
-            imageUrl: "",
-            lottieUrl: "",
-            layout: "row",
-            linkUrl: "https://chu-weather.figma.site/",
-            linkLabel: "影像裝置"
-          },
-          {
-            id: 4,
-            backgroundColor: "#f6e3e1",
-            textColor: "#111111",
-            highlightColor: "#d7ffb8",
-            category: "管理平台",
-            title: "設計概念",
-            description:
-              "創作者管理介面設計，*從投稿、收益到體驗回饋皆能一站式完成*，協助使用者快速掌握創作分潤、贊助收入、投稿進度與體驗申請等資訊。各分頁（投稿、創作分潤、贊助分潤、U 利點數、我的體驗）維持*一致的操作邏輯，降低使用者學習成本*。色彩上運用大量留白與柔和的淺粉色主調，延續「女子漾」的品牌定位，營造親和、輕盈的視覺氛圍。",
-            tools: " Figma",
-            video1Url:
-              "https://player.vimeo.com/video/1111342509?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
-            video2Url: "",
-            imageUrl: "",
-            lottieUrl: "",
-          },
-          {
-            id: 5,
-            backgroundColor: "#eff7f1",
-            textColor: "#111111",
-            highlightColor: "#d7ffb8",
-            category: "主視覺設計",
-            title: "設計概念",
-            description:
-              "*將基隆、台北、新北、桃園的地圖輪廓擬人化*，轉化為各市代表角色，*象徵區域攜手合作與全民參與*的意涵。整體以明亮色彩營造清新、輕快的氛圍，呼應減碳生活理念。",
-            tools: " Illustrator / Figma",
-            video1Url: "",
-            video2Url: "",
-            imageUrl: "https://ytchu.github.io/portfolio/web/img/co2.png",
-            lottieUrl: "",
-          },
-          {
-            id: 6,
-            backgroundColor: "#dcdcdc",
-            textColor: "#111111",
-            highlightColor: "#d7ffb8",
-            category: "資訊圖表",
-            title: "設計概念",
-            description:"因應 COVID-19 疫情數據每日更新的需求，設計上導入 Google Sheets Sync 與 Figma 的*同步機制，讓圖表中的數值、排序與配色即時更新*，清晰呈現各縣市的疫情熱區與變化趨勢。此*作業流程大幅提升效率與正確性*，同時降低人工輸入錯誤的風險。",
-            tools: " Figma / Excel 公式及函數 / Google Sheets Sync",
-            video1Url: "",
-            video2Url: "",
-            imageUrl:"https://ytchu.github.io/portfolio/web/img/COVID19-map.gif",
-            lottieUrl: "",
-            layout: "row"
-          },
-          {
-            id: 7,
-            backgroundColor: "#f7ebe6",
-            textColor: "#111111",
-            highlightColor: "#d7ffb8",
-            category: "品牌設計",
-            title: "設計概念",
-            description:
-              "延續 pets.udn.com 的識別性，*採用原 logo 中的寵物頭型輪廓作為設計元素，使品牌在不同平台上維持一致性與辨識度*。將狗、播放鍵、貓串連成一體，傳達 pets.udn.com 在影音內容上一起關注、陪伴毛小孩。",
-            tools: " Figma / Phase",
-            video1Url: "",
-            video2Url: "",
-            imageUrl: "",
-            lottieUrl:
-              "https://ytchu.github.io/portfolio/web/img/pet_video.json",
-          },
-        ];
-      }
-
-      // Animation layout active trackers
+      // Optimize: Cache DOM elements
+      const container = document.getElementById("app-container");
+      const blockElements = [];
       let currentPositions = [0, 1, 2, 3, 4, 5, 6, 7];
       let hoveredId = 0;
       let activeLayout = "TL";
       let isEditing = false;
       let editingBlockId = 0;
-
-      // Idle Detection & Auto Shuffle Variables
       let idleTimeoutId = null;
+      let ticking = false; // For requestAnimationFrame
 
       function shuffleBlocks() {
         if (window.innerWidth < 1024) return;
-
-        // Fisher-Yates shuffle only the layout position assignments
         for (let i = currentPositions.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          const temp = currentPositions[i];
-          currentPositions[i] = currentPositions[j];
-          currentPositions[j] = temp;
+          [currentPositions[i], currentPositions[j]] = [currentPositions[j], currentPositions[i]];
         }
+        
+        const blockAtSlotZero = currentPositions.indexOf(0);
+        hoveredId = blockAtSlotZero !== -1 ? blockAtSlotZero : 0;
 
-        // Determine new layout base slot 0 owner
-        let blockAtSlotZero = 0;
-        for (let i = 0; i < 8; i++) {
-          if (currentPositions[i] === 0) {
-            blockAtSlotZero = i;
-            break;
-          }
-        }
-        hoveredId = blockAtSlotZero;
-
-        // Redraw layout coordinates
         updateLayout();
-
-        if (isEditing) {
-          updateEditorFields();
-        }
-
-        // Restart idle detection
+        if (isEditing) updateEditorFields();
         resetIdleTimer();
       }
 
       function resetIdleTimer() {
-        if (idleTimeoutId) {
-          clearTimeout(idleTimeoutId);
-        }
-
-        if (window.innerWidth >= 1024) {
-          idleTimeoutId = setTimeout(shuffleBlocks, 10000); // 10 seconds
-        }
+        if (idleTimeoutId) clearTimeout(idleTimeoutId);
+        if (window.innerWidth >= 1024) idleTimeoutId = setTimeout(shuffleBlocks, 10000);
       }
 
-      const container = document.getElementById("app-container");
-
-      // Utility methods to calculate layouts
       function getLayoutQuadrant(x, y) {
         if (x >= 2 && y >= 2) return "BR";
         if (x >= 2 && y < 2) return "TR";
@@ -1640,111 +1182,61 @@
       }
 
       function getSlotAt(layoutName, col, row) {
-        return LAYOUTS[layoutName].findIndex((slot) => {
-          return (
-            col >= slot.x &&
-            col < slot.x + slot.w &&
-            row >= slot.y &&
-            row < slot.y + slot.h
-          );
+        return LAYOUTS[layoutName].findIndex(slot => 
+          col >= slot.x && col < slot.x + slot.w && row >= slot.y && row < slot.y + slot.h
+        );
+      }
+
+      function renderDescriptionHtml(text, highlightColor) {
+        if (!text) return "";
+        return text.replace(/(\*[^*\n]+\*)/g, match => {
+          const content = match.slice(1, -1);
+          return `<span class="highlight-span" style="background: linear-gradient(to bottom, transparent 50%, ${highlightColor} 50%)">${content}</span>`;
         });
       }
 
-      // Process asterisks to highlight text segments
-      function renderDescriptionHtml(text, highlightColor) {
-        if (!text) return "";
-        const parts = text.split(/(\*[^*\n]+\*)/g);
-        return parts
-          .map((part) => {
-            if (part.startsWith("*") && part.endsWith("*")) {
-              const content = part.slice(1, -1);
-              return `<span class="highlight-span" style="background: linear-gradient(to bottom, transparent 50%, ${highlightColor} 50%)">${content}</span>`;
-            }
-            return part;
-          })
-          .join("");
+      function createMediaHtml(media) {
+        if (media.type === "video") {
+          return `<div class="media-item ${media.aspect}"><iframe class="video-iframe" src="${media.url}" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
+        } else if (media.type === "image") {
+          return `<div class="media-item ${media.aspect}"><img class="media-img" src="${media.url}" alt="" loading="lazy" referrerPolicy="no-referrer" style="position: relative; width: 100%; height: 100%; object-fit: contain;"></div>`;
+        } else if (media.type === "lottie") {
+          return `<div class="media-item ${media.aspect}"><dotlottie-player src="${media.url}" background="transparent" speed="1" class="lottie-player" loop autoplay></dotlottie-player></div>`;
+        }
+        return '';
       }
 
-      // Render contents of a given block
       function renderBlockContents(blockId) {
         const block = blocks[blockId];
-        const blockEl = document.getElementById(`block-${blockId}`);
-        if (!blockEl) return;
+        let blockEl = document.getElementById(`block-${blockId}`);
+        
+        if (!blockEl) {
+          blockEl = document.createElement('div');
+          blockEl.id = `block-${blockId}`;
+          blockEl.className = 'block-element';
+          container.appendChild(blockEl);
+          blockElements[blockId] = blockEl;
+        }
 
         const mediaItems = [];
-        if (block.imageUrl)
-          mediaItems.push({
-            type: "image",
-            url: block.imageUrl,
-            aspect: "aspect-auto",
-          });
-        if (block.lottieUrl)
-          mediaItems.push({
-            type: "lottie",
-            url: block.lottieUrl,
-            aspect: "aspect-square",
-          });
-        if (block.video1Url)
-          mediaItems.push({
-            type: "video",
-            url: block.video1Url,
-            aspect: "aspect-video",
-          });
-        if (block.video2Url)
-          mediaItems.push({
-            type: "video",
-            url: block.video2Url,
-            aspect: "aspect-vertical",
-          });
+        if (block.imageUrl) mediaItems.push({ type: "image", url: block.imageUrl, aspect: "aspect-auto" });
+        if (block.lottieUrl) mediaItems.push({ type: "lottie", url: block.lottieUrl, aspect: "aspect-square" });
+        if (block.video1Url) mediaItems.push({ type: "video", url: block.video1Url, aspect: "aspect-video" });
+        if (block.video2Url) mediaItems.push({ type: "video", url: block.video2Url, aspect: "aspect-vertical" });
 
-        let mediaHtml = "";
-        const slicedMedia = mediaItems.slice(0, 2);
-        if (slicedMedia.length > 0) {
-          slicedMedia.forEach((media) => {
-            if (media.type === "video") {
-              mediaHtml += `
-              <div class="media-item ${media.aspect}">
-                <iframe class="video-iframe" src="${media.url}" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-              </div>
-            `;
-            } else if (media.type === "image") {
-              mediaHtml += `
-              <div class="media-item ${media.aspect}">
-                <img class="media-img" src="${media.url}" alt="" referrerPolicy="no-referrer" style="position: relative; width: 100%; height: 100%; object-fit: contain;">
-              </div>
-            `;
-            } else if (media.type === "lottie") {
-              mediaHtml += `
-              <div class="media-item ${media.aspect}">
-                <dotlottie-player src="${media.url}" background="transparent" speed="1" class="lottie-player" loop autoplay></dotlottie-player>
-              </div>
-            `;
-            }
-          });
-        } else {
-          mediaHtml = `
-          <div class="no-media-message">
-            No Media Added
-          </div>
-        `;
-        }
-
-        let innerContentHtml = "";
-
-        if (block.layout === "row") {
-          innerContentHtml = `
-          <div class="block-inner-content layout-row">
+        const mediaHtml = mediaItems.slice(0, 2).map(createMediaHtml).join('') || '<div class="no-media-message">No Media Added</div>';
+        
+        const innerContentHtml = `
+          <div class="block-inner-content ${block.layout === "row" ? "layout-row" : ""}">
             <div class="header-section">
               <div class="number-indicator">
-                0${blockId + 1} <span class="divider">/</span> <span class="total">08</span>
+                0${blockId + 1} <span class="divider">/</span> <span class="total">0${blocks.length}</span>
               </div>
               <h2 class="category-heading">${block.category || '<span style="opacity: 0.5;">Empty</span>'}</h2>
             </div>
-
-            <div class="right-column media-section">
-              <div class="media-container-inner">
-                ${mediaHtml}
-              </div>
+            
+            <div class="${block.layout === "row" ? "right-column " : ""}media-section">
+              <div class="media-container-inner">${mediaHtml}</div>
             </div>
 
             <div class="footer-section">
@@ -1753,7 +1245,6 @@
                 <div class="description-text">${renderDescriptionHtml(block.description, block.highlightColor)}</div>
                 ${block.linkUrl ? `<a href="${block.linkUrl}" class="action-link" target="_blank">${block.linkLabel || "連結"}</a>` : ""}
               </div>
-
               <div class="tools-indicator">
                 <span class="tools-label">使用工具：</span>
                 <span class="tools-value">${block.tools || "-"}</span>
@@ -1762,151 +1253,99 @@
           </div>
           <div class="unhovered-overlay"></div>
         `;
-        } else {
-          innerContentHtml = `
-          <div class="block-inner-content">
-            <div class="header-section">
-              <div class="number-indicator">
-                0${blockId + 1} <span class="divider">/</span> <span class="total">08</span>
-              </div>
-              <h2 class="category-heading">${block.category || '<span style="opacity: 0.5;">Empty</span>'}</h2>
-            </div>
-
-            <div class="media-section">
-              <div class="media-container-inner">
-                ${mediaHtml}
-              </div>
-            </div>
-
-            <div class="footer-section">
-              <div class="text-info">
-                <h4 class="title-heading">${block.title || "Untitled"}</h4>
-                <div class="description-text">${renderDescriptionHtml(block.description, block.highlightColor)}</div>
-                ${block.linkUrl ? `<a href="${block.linkUrl}" class="action-link" target="_blank">${block.linkLabel || "連結"}</a>` : ""}
-              </div>
-              
-              <div class="tools-indicator">
-                <span class="tools-label">使用工具：</span>
-                <span class="tools-value">${block.tools || "-"}</span>
-              </div>
-            </div>
-          </div>
-          <div class="unhovered-overlay"></div>
-        `;
-        }
 
         blockEl.innerHTML = innerContentHtml;
-
-        // Update block element styles
         blockEl.style.backgroundColor = block.backgroundColor;
         blockEl.style.color = block.textColor;
       }
 
-      // Refresh overall layout coordinates
       function updateLayout() {
         if (window.innerWidth < 1024) {
-          // Clear all desktop inline position styles for responsive stacked layout comfort
-          for (let i = 0; i < 8; i++) {
-            const el = document.getElementById(`block-${i}`);
+          blocks.forEach((_, i) => {
+            const el = blockElements[i];
             if (el) {
               el.removeAttribute("style");
-              // Reapply item colors custom
               el.style.backgroundColor = blocks[i].backgroundColor;
               el.style.color = blocks[i].textColor;
             }
-          }
+          });
           return;
         }
 
-        // Determine the block assigned to slot 0 dynamically
-        let blockAtSlotZero = 0;
-        for (let i = 0; i < 8; i++) {
-          if (currentPositions[i] === 0) {
-            blockAtSlotZero = i;
-            break;
-          }
-        }
+        const blockAtSlotZero = currentPositions.indexOf(0);
+        const actualSlotZeroBlock = blockAtSlotZero !== -1 ? blockAtSlotZero : 0;
 
-        for (let blockId = 0; blockId < 8; blockId++) {
+        blocks.forEach((_, blockId) => {
           let slotIndex = currentPositions[blockId];
-          if (blockId === hoveredId) {
-            slotIndex = 0;
-          } else if (blockId === blockAtSlotZero) {
-            slotIndex = currentPositions[hoveredId];
-          }
+          if (blockId === hoveredId) slotIndex = 0;
+          else if (blockId === actualSlotZeroBlock) slotIndex = currentPositions[hoveredId];
 
           const slot = LAYOUTS[activeLayout][slotIndex];
-          const el = document.getElementById(`block-${blockId}`);
-          if (el) {
-            el.style.position = "absolute";
-            el.style.top = `${slot.y * 20}%`;
-            el.style.left = `${slot.x * 20}%`;
-            el.style.width = `${slot.w * 20}%`;
-            el.style.height = `${slot.h * 20}%`;
-            el.style.zIndex = blockId === hoveredId ? "10" : "1";
-
-            const scale = slot.w / 3;
-            el.style.setProperty("--lg-scale", scale);
+          const el = blockElements[blockId];
+          if (el && slot) {
+            el.style.cssText = `
+              position: absolute;
+              top: ${slot.y * 20}%;
+              left: ${slot.x * 20}%;
+              width: ${slot.w * 20}%;
+              height: ${slot.h * 20}%;
+              z-index: ${blockId === hoveredId ? "10" : "1"};
+              --lg-scale: ${slot.w / 3};
+              --dz-margin: ${slot.w === 1 ? '35%' : '25%'};
+              background-color: ${blocks[blockId].backgroundColor};
+              color: ${blocks[blockId].textColor};
+            `;
             el.setAttribute("data-slot-index", slotIndex);
           }
+        });
+      }
+
+      // Optimize: Use requestAnimationFrame for pointermove
+      function handlePointerMove(e) {
+        if (window.innerWidth < 1024 || !container) return;
+        
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            processPointerMove(e.clientX, e.clientY);
+            ticking = false;
+          });
+          ticking = true;
         }
       }
 
-      // Event handlers for tracking pointer/hover moves
-      function handlePointerMove(e) {
-        if (window.innerWidth < 1024 || !container) return;
-
+      function processPointerMove(clientX, clientY) {
         const rect = container.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
 
-        const col = Math.floor((x / rect.width) * 5);
-        const row = Math.floor((y / rect.height) * 5);
+        const col = Math.max(0, Math.min(4, Math.floor((x / rect.width) * 5)));
+        const row = Math.max(0, Math.min(4, Math.floor((y / rect.height) * 5)));
 
-        const safeCol = Math.max(0, Math.min(4, col));
-        const safeRow = Math.max(0, Math.min(4, row));
-
-        const slotIndex = getSlotAt(activeLayout, safeCol, safeRow);
+        const slotIndex = getSlotAt(activeLayout, col, row);
         if (slotIndex === -1) return;
 
         const slot = LAYOUTS[activeLayout][slotIndex];
-
         const slotWidth = slot.w * (rect.width / 5);
         const slotHeight = slot.h * (rect.height / 5);
         const slotLeft = slot.x * (rect.width / 5);
         const slotTop = slot.y * (rect.height / 5);
 
-        const innerLeft = slotLeft + slotWidth * 0.15;
-        const innerRight = slotLeft + slotWidth * 0.85;
-        const innerTop = slotTop + slotHeight * 0.15;
-        const innerBottom = slotTop + slotHeight * 0.85;
+        const margin = slot.w === 1 ? 0.35 : 0.25;
 
-        if (
-          x >= innerLeft &&
-          x <= innerRight &&
-          y >= innerTop &&
-          y <= innerBottom
-        ) {
-          let blockAtSlotZero = 0;
-          for (let i = 0; i < 8; i++) {
-            if (currentPositions[i] === 0) {
-              blockAtSlotZero = i;
-              break;
-            }
-          }
-
+        // Add deadzone to avoid flickering
+        if (x >= slotLeft + slotWidth * margin && x <= slotLeft + slotWidth * (1 - margin) &&
+            y >= slotTop + slotHeight * margin && y <= slotTop + slotHeight * (1 - margin)) {
+          
+          const blockAtSlotZero = currentPositions.indexOf(0);
           let blockId = -1;
-          if (slotIndex === 0) {
-            blockId = hoveredId;
-          } else if (slotIndex === currentPositions[hoveredId]) {
-            blockId = blockAtSlotZero;
-          } else {
-            blockId = currentPositions.indexOf(slotIndex);
-          }
+          
+          if (slotIndex === 0) blockId = hoveredId;
+          else if (slotIndex === currentPositions[hoveredId]) blockId = blockAtSlotZero;
+          else blockId = currentPositions.indexOf(slotIndex);
 
-          if (blockId !== hoveredId && blockId >= 0 && blockId < 8) {
+          if (blockId !== hoveredId && blockId >= 0 && blockId < blocks.length) {
             hoveredId = blockId;
-            activeLayout = getLayoutQuadrant(safeCol, safeRow);
+            activeLayout = getLayoutQuadrant(col, row);
             updateLayout();
           }
         }
@@ -1914,34 +1353,24 @@
 
       function handlePointerLeave() {
         if (window.innerWidth < 1024) return;
-        let blockAtSlotZero = 0;
-        for (let i = 0; i < 8; i++) {
-          if (currentPositions[i] === 0) {
-            blockAtSlotZero = i;
-            break;
-          }
-        }
-        hoveredId = blockAtSlotZero;
+        const blockAtSlotZero = currentPositions.indexOf(0);
+        hoveredId = blockAtSlotZero !== -1 ? blockAtSlotZero : 0;
         activeLayout = "TL";
         updateLayout();
       }
 
-      // Toggle editor sidebar panel visibility
+      // Editor Logic
       const settingsTrigger = document.getElementById("settings-trigger");
       const editorPanel = document.getElementById("editor-panel");
       const editorClose = document.getElementById("editor-close");
+      const selectBlock = document.getElementById("editor-select-block");
 
       settingsTrigger.addEventListener("click", () => {
         isEditing = !isEditing;
         editingBlockId = hoveredId;
-        if (isEditing) {
-          editorPanel.classList.add("open");
-          settingsTrigger.style.display = "none";
-          window.updateEditorFields();
-        } else {
-          editorPanel.classList.remove("open");
-          settingsTrigger.style.display = "block";
-        }
+        editorPanel.classList.toggle("open", isEditing);
+        settingsTrigger.style.display = isEditing ? "none" : "block";
+        if (isEditing) updateEditorFields();
       });
 
       editorClose.addEventListener("click", () => {
@@ -1950,260 +1379,140 @@
         settingsTrigger.style.display = "block";
       });
 
-      // Form inputs and real-time syncing bindings
-      const selectBlock = document.getElementById("editor-select-block");
-      const bgColorInput = document.getElementById("editor-bg-color");
-      const textColorInput = document.getElementById("editor-text-color");
-      const highlightColorInput = document.getElementById(
-        "editor-highlight-color",
-      );
-      const layoutInput = document.getElementById("editor-layout");
-      const linkLabelInput = document.getElementById("editor-link-label");
-      const linkUrlInput = document.getElementById("editor-link-url");
-      const categoryInput = document.getElementById("editor-category");
-      const titleInput = document.getElementById("editor-title");
-      const descriptionInput = document.getElementById("editor-description");
-      const toolsInput = document.getElementById("editor-tools");
-      const imageUrlInput = document.getElementById("editor-image-url");
-      const lottieUrlInput = document.getElementById("editor-lottie-url");
-      const video1UrlInput = document.getElementById("editor-video1-url");
-      const video2UrlInput = document.getElementById("editor-video2-url");
+      function setHighlightColor(color) {
+        const input = document.getElementById('editor-highlight-color');
+        input.value = color;
+        input.dispatchEvent(new Event('input'));
+      }
+      window.setHighlightColor = setHighlightColor;
+
+      const formInputMap = {
+        'editor-layout': 'layout',
+        'editor-bg-color': 'backgroundColor',
+        'editor-text-color': 'textColor',
+        'editor-highlight-color': 'highlightColor',
+        'editor-link-label': 'linkLabel',
+        'editor-link-url': 'linkUrl',
+        'editor-category': 'category',
+        'editor-title': 'title',
+        'editor-description': 'description',
+        'editor-tools': 'tools',
+        'editor-image-url': 'imageUrl',
+        'editor-lottie-url': 'lottieUrl',
+        'editor-video1-url': 'video1Url',
+        'editor-video2-url': 'video2Url'
+      };
 
       function updateEditorFields() {
         const block = blocks[editingBlockId];
         if (!block) return;
-
-        selectBlock.value = editingBlockId;
-        layoutInput.value = block.layout === "row" ? "row" : "column";
-        bgColorInput.value = block.backgroundColor;
-        textColorInput.value = block.textColor;
-        highlightColorInput.value = block.highlightColor;
-        linkLabelInput.value = block.linkLabel || "";
-        linkUrlInput.value = block.linkUrl || "";
-        categoryInput.value = block.category || "";
-        titleInput.value = block.title || "";
-        descriptionInput.value = block.description || "";
-        toolsInput.value = block.tools || "";
-        imageUrlInput.value = block.imageUrl || "";
-        lottieUrlInput.value = block.lottieUrl || "";
-        video1UrlInput.value = block.video1Url || "";
-        video2UrlInput.value = block.video2Url || "";
-
-        // Recreate options with updated dynamic names
-        selectBlock.innerHTML = blocks
-          .map(
-            (b) => `
-        <option value="${b.id}" ${b.id === editingBlockId ? "selected" : ""}>區塊 ${b.id + 1} - ${b.category || "Unnamed"}</option>
-      `,
-          )
-          .join("");
+        
+        selectBlock.innerHTML = blocks.map(b => `<option value="${b.id}" ${b.id === editingBlockId ? "selected" : ""}>區塊 ${b.id + 1} - ${b.category || "Unnamed"}</option>`).join("");
+        
+        for (const [id, prop] of Object.entries(formInputMap)) {
+          const el = document.getElementById(id);
+          if (el) el.value = prop === 'layout' ? (block.layout === 'row' ? 'row' : 'column') : (block[prop] || "");
+        }
       }
-
-      window.updateEditorFields = updateEditorFields;
 
       selectBlock.addEventListener("change", (e) => {
         editingBlockId = Number(e.target.value);
         updateEditorFields();
       });
 
-      const formInputs = [
-        { element: layoutInput, property: "layout" },
-        { element: bgColorInput, property: "backgroundColor" },
-        { element: textColorInput, property: "textColor" },
-        { element: highlightColorInput, property: "highlightColor" },
-        { element: linkLabelInput, property: "linkLabel" },
-        { element: linkUrlInput, property: "linkUrl" },
-        { element: categoryInput, property: "category" },
-        { element: titleInput, property: "title" },
-        { element: descriptionInput, property: "description" },
-        { element: toolsInput, property: "tools" },
-        { element: imageUrlInput, property: "imageUrl" },
-        { element: lottieUrlInput, property: "lottieUrl" },
-        { element: video1UrlInput, property: "video1Url" },
-        { element: video2UrlInput, property: "video2Url" },
-      ];
-
-      formInputs.forEach((item) => {
-        item.element.addEventListener("input", (e) => {
-          const id = editingBlockId;
-          blocks[id][item.property] = e.target.value;
-
-          // Re-render only modified block contents for maximum performance
-          renderBlockContents(id);
-
-          if (item.property === "category") {
-            const opt = selectBlock.querySelector(`option[value="${id}"]`);
-            if (opt) {
-              opt.textContent = `區塊 ${id + 1} - ${blocks[id].category || "Unnamed"}`;
-            }
+      for (const [id, prop] of Object.entries(formInputMap)) {
+        document.getElementById(id).addEventListener("input", (e) => {
+          blocks[editingBlockId][prop] = e.target.value;
+          renderBlockContents(editingBlockId);
+          if (prop === "category") {
+            const opt = selectBlock.querySelector(`option[value="${editingBlockId}"]`);
+            if (opt) opt.textContent = `區塊 ${editingBlockId + 1} - ${blocks[editingBlockId].category || "Unnamed"}`;
           }
         });
-      });
+      }
 
-      // Handle viewport resize events
+      // Optimize: Debounce resize
+      let resizeTimer;
       window.addEventListener("resize", () => {
-        updateLayout();
-        resetIdleTimer();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          updateLayout();
+          resetIdleTimer();
+        }, 150);
       });
 
-      // Initialize application representation
       function init() {
-        // Build options
-        selectBlock.innerHTML = blocks
-          .map(
-            (b) => `
-        <option value="${b.id}">區塊 ${b.id + 1} - ${b.category || "Unnamed"}</option>
-      `,
-          )
-          .join("");
-
-        // Populate content and layout
-        for (let i = 0; i < 8; i++) {
-          renderBlockContents(i);
-        }
-
+        container.innerHTML = '';
+        blocks.forEach((_, i) => renderBlockContents(i));
         updateLayout();
 
         if (container) {
-          container.addEventListener("pointermove", handlePointerMove);
+          container.addEventListener("pointermove", handlePointerMove, { passive: true });
           container.addEventListener("pointerleave", handlePointerLeave);
         }
 
-        // Reset timer on active user interaction
-        window.addEventListener("mousemove", resetIdleTimer);
-        window.addEventListener("pointermove", resetIdleTimer);
-        window.addEventListener("mousedown", resetIdleTimer);
-        window.addEventListener("keydown", resetIdleTimer);
-        window.addEventListener("scroll", resetIdleTimer);
-
-        // Trigger initial countdown
+        const activeEvents = ['mousemove', 'pointermove', 'mousedown', 'keydown', 'scroll', 'touchstart'];
+        activeEvents.forEach(evt => window.addEventListener(evt, resetIdleTimer, { passive: true }));
         resetIdleTimer();
       }
 
-      document.addEventListener("DOMContentLoaded", init);
-      // Call init directly in case DOMContentLoaded has already passed
-      if (
-        document.readyState === "complete" ||
-        document.readyState === "interactive"
-      ) {
-        init();
-      }
+      if (document.readyState === "complete" || document.readyState === "interactive") init();
+      else document.addEventListener("DOMContentLoaded", init);
 
-      // Export HTML functionality
+      // Export HTML
       const exportBtn = document.getElementById("editor-export");
       if (exportBtn) {
         exportBtn.addEventListener("click", () => {
           const docClone = document.documentElement.cloneNode(true);
-
-          // Ensure app-data script gets updated in clone
-          const startDataScript = docClone.querySelector("#app-data");
-          if (startDataScript) {
-            startDataScript.textContent =
-              "\n" + JSON.stringify(blocks, null, 2) + "\n  ";
+          const dataScript = docClone.querySelector("#app-data");
+          if (dataScript) dataScript.textContent = "\n" + JSON.stringify(blocks, null, 2) + "\n";
+          
+          const cloneContainer = docClone.querySelector("#app-container");
+          if (cloneContainer) {
+            cloneContainer.innerHTML = blocks.map((_, i) => `<div id="block-${i}" class="block-element"></div>`).join('');
+            cloneContainer.removeAttribute("style");
           }
 
-          // Clean up DOM state in clone
-          const containerClone = docClone.querySelector("#app-container");
-          if (containerClone) {
-            containerClone.innerHTML = "";
-            for (let i = 0; i < 8; i++) {
-              const div = document.createElement("div");
-              div.id = `block-${i}`;
-              div.className = "block-element";
-              containerClone.appendChild(div);
-            }
-            containerClone.removeAttribute("style");
-          }
+          docClone.querySelector("#editor-panel")?.classList.remove("open");
+          const toggle = docClone.querySelector("#settings-trigger");
+          if (toggle) toggle.style.display = "block";
+          docClone.querySelector("#sidebar-panel")?.classList.remove("open");
+          docClone.querySelector("#sidebar-backdrop")?.classList.remove("open");
+          docClone.querySelector("#sticker")?.classList.remove("hidden-sticker");
 
-          // Reset interactive states
-          const editorPanelClone = docClone.querySelector("#editor-panel");
-          if (editorPanelClone) editorPanelClone.classList.remove("open");
+          docClone.querySelectorAll('script[type="module"][src*="vite"], script[src*="client"]').forEach(s => s.remove());
 
-          const settingsTriggerClone =
-            docClone.querySelector("#settings-trigger");
-          if (settingsTriggerClone)
-            settingsTriggerClone.style.display = "block";
-
-          const sidebarPanelClone = docClone.querySelector("#sidebar-panel");
-          if (sidebarPanelClone) sidebarPanelClone.classList.remove("open");
-
-          const sidebarBackdropClone =
-            docClone.querySelector("#sidebar-backdrop");
-          if (sidebarBackdropClone)
-            sidebarBackdropClone.classList.remove("open");
-
-          const stickerClone = docClone.querySelector("#sticker");
-          if (stickerClone) stickerClone.classList.remove("hidden-sticker");
-
-          // Clean up Vite/Preview injected scripts if any
-          const injectedScripts = docClone.querySelectorAll(
-            'script[type="module"][src*="vite"], script[src*="client"]',
-          );
-          injectedScripts.forEach((s) => s.remove());
-
-          const htmlContent = "<!DOCTYPE html>\n" + docClone.outerHTML;
-
-          const blob = new Blob([htmlContent], {
-            type: "text/html;charset=utf-8",
-          });
+          const blob = new Blob(["<!DOCTYPE html>\n" + docClone.outerHTML], { type: "text/html;charset=utf-8" });
           const url = URL.createObjectURL(blob);
-
           const a = document.createElement("a");
           a.href = url;
           a.download = "portfolio.html";
-          a.style.display = "none";
-          document.body.appendChild(a);
           a.click();
-
-          setTimeout(() => {
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-          }, 100);
+          setTimeout(() => URL.revokeObjectURL(url), 100);
         });
       }
 
-      // Go to top functionality
+      // Sidebar & Scroll
       const goTopBtn = document.getElementById("goToTop");
+      window.addEventListener("scroll", () => goTopBtn.classList.toggle("visible", window.scrollY > 300), { passive: true });
+      goTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          goTopBtn.classList.add("visible");
-        } else {
-          goTopBtn.classList.remove("visible");
-        }
-      });
-
-      goTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Sidebar functionality
       const sticker = document.getElementById("sticker");
       const sidebarPanel = document.getElementById("sidebar-panel");
       const sidebarBackdrop = document.getElementById("sidebar-backdrop");
       const closeSidebarBtn = document.getElementById("close-sidebar");
 
-      function openSidebar() {
-        sidebarPanel.classList.add("open");
-        sidebarBackdrop.classList.add("open");
-        sticker.classList.add("hidden-sticker");
-        document.body.style.overflow = "hidden";
+      function toggleSidebar(show) {
+        sidebarPanel.classList.toggle("open", show);
+        sidebarBackdrop.classList.toggle("open", show);
+        sticker.classList.toggle("hidden-sticker", show);
+        document.body.style.overflow = show ? "hidden" : "";
       }
 
-      function closeSidebar() {
-        sidebarPanel.classList.remove("open");
-        sidebarBackdrop.classList.remove("open");
-        sticker.classList.remove("hidden-sticker");
-        document.body.style.overflow = "";
-      }
-
-      sticker.addEventListener("click", openSidebar);
-      closeSidebarBtn.addEventListener("click", closeSidebar);
-      sidebarBackdrop.addEventListener("click", closeSidebar);
+      sticker.addEventListener("click", () => toggleSidebar(true));
+      closeSidebarBtn.addEventListener("click", () => toggleSidebar(false));
+      sidebarBackdrop.addEventListener("click", () => toggleSidebar(false));
     </script>
-  
+</body>
+</html>
 
-<div id="gridmanWrapper" style="position: fixed; height: 0px; width: 0px; z-index: 99999; top: 0px; left: 0px;"></div></body></html>
