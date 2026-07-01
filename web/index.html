@@ -1,18 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>朱 怡姿 | yitzu.chu@gmail.com</title>
-    <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+    ></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap");
 
       :root {
-        --font-sans: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --font-sans:
+          "Noto Sans TC", "PingFang TC", "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
       }
 
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
       body {
         background-color: #000000;
@@ -21,7 +30,7 @@
         overflow-x: hidden;
         color: #ffffff;
       }
-            
+
       .description-text b {
         display: inline-block;
         font-weight: 500;
@@ -79,7 +88,7 @@
         align-items: stretch;
         justify-content: start;
         overflow: hidden;
-        transition: all 500ms cubic-bezier(0.22, 1, 0.36, 1);
+        transition: all 900ms cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       @media (min-width: 1024px) {
@@ -111,7 +120,7 @@
           flex: none;
           transform: scale(var(--lg-scale, 1));
           transform-origin: top left;
-          transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+          transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
           padding: 4cqmin;
           margin: auto;
           overflow: hidden;
@@ -130,7 +139,10 @@
       }
 
       @container (min-width: 1px) {
-        .header-section { margin-bottom: 1.5cqmin; gap: 1.5cqmin; }
+        .header-section {
+          margin-bottom: 1.5cqmin;
+          gap: 1.5cqmin;
+        }
       }
 
       .number-indicator {
@@ -142,7 +154,9 @@
       }
 
       @container (min-width: 1px) {
-        .number-indicator { font-size: min(2cqmin, 16px); }
+        .number-indicator {
+          font-size: min(2cqmin, 16px);
+        }
       }
 
       .number-indicator .divider {
@@ -157,7 +171,9 @@
       }
 
       @container (min-width: 1px) {
-        .number-indicator .total { font-size: min(1.5cqmin, 10px); }
+        .number-indicator .total {
+          font-size: min(1.5cqmin, 10px);
+        }
       }
 
       .category-heading {
@@ -167,7 +183,9 @@
       }
 
       @container (min-width: 1px) {
-        .category-heading { font-size: min(2.5cqmin, 16px); }
+        .category-heading {
+          font-size: min(2.5cqmin, 16px);
+        }
       }
 
       .media-section {
@@ -182,7 +200,9 @@
       }
 
       @media (min-width: 1024px) {
-        .media-section { margin: 0; }
+        .media-section {
+          margin: 0;
+        }
       }
 
       .media-container-inner {
@@ -220,16 +240,28 @@
         }
       }
 
-      .media-item.aspect-video { aspect-ratio: 16/9; }
-      .media-item.aspect-vertical { aspect-ratio: 9/16; }
-      .media-item.aspect-square { aspect-ratio: 1/1; }
-      .media-item.aspect-auto { aspect-ratio: auto; }
-
-      @media (min-width: 1024px) {
-        .media-item.aspect-auto { max-height: 100%; }
+      .media-item.aspect-video {
+        aspect-ratio: 16/9;
+      }
+      .media-item.aspect-vertical {
+        aspect-ratio: 9/16;
+      }
+      .media-item.aspect-square {
+        aspect-ratio: 1/1;
+      }
+      .media-item.aspect-auto {
+        aspect-ratio: auto;
       }
 
-      .video-iframe, .media-img, .lottie-player {
+      @media (min-width: 1024px) {
+        .media-item.aspect-auto {
+          max-height: 100%;
+        }
+      }
+
+      .video-iframe,
+      .media-img,
+      .lottie-player {
         position: absolute;
         top: 0;
         left: 0;
@@ -238,7 +270,9 @@
         border: none;
       }
 
-      .media-img { object-fit: cover; }
+      .media-img {
+        object-fit: cover;
+      }
 
       .no-media-message {
         display: flex;
@@ -304,7 +338,9 @@
       }
 
       @container (min-width: 1px) {
-        .title-heading { font-size: min(3.5cqmin, 18px); }
+        .title-heading {
+          font-size: min(3.5cqmin, 18px);
+        }
       }
 
       .description-text {
@@ -313,17 +349,23 @@
         letter-spacing: 1px;
         text-align: justify;
         white-space: pre-wrap;
-        opacity: .96;
+        opacity: 0.96;
       }
 
       @container (min-width: 1px) {
-        .description-text { font-size: min(2.2cqmin, 16px); }
+        .description-text {
+          font-size: min(2.2cqmin, 16px);
+        }
       }
 
-      .highlight-span { padding-bottom: 0.1rem; }
+      .highlight-span {
+        padding-bottom: 0.1rem;
+      }
 
       @container (min-width: 1px) {
-        .highlight-span { padding-bottom: 0.25cqmin; }
+        .highlight-span {
+          padding-bottom: 0.25cqmin;
+        }
       }
 
       .tools-indicator {
@@ -336,7 +378,9 @@
       }
 
       @container (min-width: 1px) {
-        .tools-indicator { font-size: min(1.8cqmin, 14px); }
+        .tools-indicator {
+          font-size: min(1.8cqmin, 14px);
+        }
       }
 
       .tools-label {
@@ -347,7 +391,9 @@
       }
 
       @container (min-width: 1px) {
-        .tools-label { margin-right: 0.8cqmin; }
+        .tools-label {
+          margin-right: 0.8cqmin;
+        }
       }
 
       .tools-value {
@@ -357,15 +403,30 @@
       }
 
       @media (max-width: 1023px) {
-        .category-heading { font-size: 16px !important; }
-        .title-heading { font-size: 18px !important; }
-        .description-text { font-size: 16px !important; }
-        .tools-indicator { font-size: 14px !important; }
-        .number-indicator, .number-indicator .divider { font-size: 16px !important; }
-        .number-indicator .total { font-size: 10px !important; }
+        .category-heading {
+          font-size: 16px !important;
+        }
+        .title-heading {
+          font-size: 18px !important;
+        }
+        .description-text {
+          font-size: 16px !important;
+        }
+        .tools-indicator {
+          font-size: 14px !important;
+        }
+        .number-indicator,
+        .number-indicator .divider {
+          font-size: 16px !important;
+        }
+        .number-indicator .total {
+          font-size: 10px !important;
+        }
       }
 
-      .unhovered-overlay { display: none; }
+      .unhovered-overlay {
+        display: none;
+      }
 
       @media (min-width: 1024px) {
         .unhovered-overlay {
@@ -378,7 +439,9 @@
           pointer-events: none;
           z-index: 30;
         }
-        .app-container:has(.block-element:hover) .block-element:not(:hover) .unhovered-overlay {
+        .app-container:has(.block-element:hover)
+          .block-element:not(:hover)
+          .unhovered-overlay {
           background-color: rgba(0, 0, 0, 0.07);
         }
       }
@@ -398,7 +461,9 @@
         transition: opacity 0.2s ease;
       }
 
-      .action-link:hover { opacity: 1; }
+      .action-link:hover {
+        opacity: 1;
+      }
 
       .action-link:after {
         position: absolute;
@@ -407,22 +472,29 @@
         font-size: 14px;
         top: 2px;
         right: -20px;
-        transition: .4s;
+        transition: 0.4s;
       }
 
       .action-link:hover:after {
         top: -2px;
         right: -24px;
-        transition: .4s;
+        transition: 0.4s;
       }
 
       @container (min-width: 1px) {
-        .action-link { font-size: min(2cqmin, 16px); }
+        .action-link {
+          font-size: min(2cqmin, 16px);
+        }
       }
 
       @media (max-width: 1023px) {
-        .action-link { font-size: 14px !important; }
-        .block-inner-content.layout-row { gap: 0; justify-content: space-between; }
+        .action-link {
+          font-size: 14px !important;
+        }
+        .block-inner-content.layout-row {
+          gap: 0;
+          justify-content: space-between;
+        }
       }
 
       .block-inner-content.layout-row {
@@ -467,7 +539,9 @@
           gap: 3cqmin;
           align-self: end;
         }
-        .block-inner-content.layout-row .text-info { width: 80%; }
+        .block-inner-content.layout-row .text-info {
+          width: 80%;
+        }
         .block-inner-content.layout-row .right-column {
           grid-area: media;
           margin: 0;
@@ -499,7 +573,10 @@
           max-width: 100%;
           object-fit: contain;
         }
-        .block-inner-content.layout-row .right-column .media-item dotlottie-player {
+        .block-inner-content.layout-row
+          .right-column
+          .media-item
+          dotlottie-player {
           position: relative;
           width: 100%;
           height: auto;
@@ -526,7 +603,9 @@
       }
 
       @media (min-width: 768px) {
-        .editor-panel { width: 384px; }
+        .editor-panel {
+          width: 384px;
+        }
       }
 
       .editor-panel.open {
@@ -535,8 +614,12 @@
       }
 
       @keyframes slideIn {
-        from { transform: translateX(100%); }
-        to { transform: translateX(0); }
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
       }
 
       .editor-header {
@@ -567,7 +650,9 @@
         transition: background-color 200ms ease;
       }
 
-      .editor-close:hover { background-color: rgba(255, 255, 255, 0.1); }
+      .editor-close:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
 
       .editor-content {
         flex: 1;
@@ -589,9 +674,14 @@
         color: rgba(255, 255, 255, 0.6);
       }
 
-      .form-sublabel { font-size: 0.75rem; opacity: 0.5; }
+      .form-sublabel {
+        font-size: 0.75rem;
+        opacity: 0.5;
+      }
 
-      .form-select, .form-input, .form-textarea {
+      .form-select,
+      .form-input,
+      .form-textarea {
         width: 100%;
         background-color: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -604,11 +694,15 @@
         transition: border-color 200ms ease;
       }
 
-      .form-select:focus, .form-input:focus, .form-textarea:focus {
+      .form-select:focus,
+      .form-input:focus,
+      .form-textarea:focus {
         border-color: rgba(255, 255, 255, 0.3);
       }
 
-      .form-select option { background-color: #111111; }
+      .form-select option {
+        background-color: #111111;
+      }
 
       .colors-grid {
         display: grid;
@@ -664,7 +758,9 @@
         gap: 0.5rem;
       }
 
-      .export-btn:hover { background-color: #e5e5e5; }
+      .export-btn:hover {
+        background-color: #e5e5e5;
+      }
 
       .go-to-top {
         position: fixed;
@@ -684,20 +780,65 @@
         border: none;
         opacity: 0;
         visibility: hidden;
-        transition: letter-spacing 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
+        transition:
+          letter-spacing 0.4s ease,
+          opacity 0.3s ease,
+          visibility 0.3s ease;
         z-index: 50;
         mix-blend-mode: difference;
       }
 
-      .go-to-top.visible { opacity: 1; visibility: visible; }
-      .go-to-top:hover { letter-spacing: 2px; }
-
-      @keyframes stickerWobble {
-        0% { transform: rotate(-30deg); }
-        100% { transform: rotate(30deg); }
+      .go-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+      .go-to-top:hover {
+        letter-spacing: 2px;
       }
 
-      .animate-sticker { animation: stickerWobble 1.6s ease-in-out infinite alternate; }
+      @keyframes stickerWobble {
+        0% {
+          transform: rotate(-30deg);
+        }
+        100% {
+          transform: rotate(30deg);
+        }
+      }
+
+      .animate-sticker {
+        animation: stickerWobble 1.6s ease-in-out infinite alternate;
+      }
+
+      /* Loading Overlay */
+      .loading-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: #000000;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition:
+          opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+          visibility 0.6s;
+      }
+      .loading-overlay.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loading-icon {
+        width: 60px;
+        height: 60px;
+        position: relative;
+      }
+      .loading-block {
+        position: absolute;
+        transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        border: 2px solid #000;
+        box-sizing: border-box;
+        border-radius: 2px;
+      }
 
       .sidebar-backdrop {
         position: fixed;
@@ -709,7 +850,10 @@
         transition: all 0.4s ease;
       }
 
-      .sidebar-backdrop.open { opacity: 1; visibility: visible; }
+      .sidebar-backdrop.open {
+        opacity: 1;
+        visibility: visible;
+      }
 
       .sidebar-panel {
         position: fixed;
@@ -727,9 +871,15 @@
         transition: transform 0.4s ease;
       }
 
-      .sidebar-panel.open { transform: translateX(0); }
+      .sidebar-panel.open {
+        transform: translateX(0);
+      }
 
-      @media (min-width: 768px) { .sidebar-panel { padding: 0 15vw; } }
+      @media (min-width: 768px) {
+        .sidebar-panel {
+          padding: 0 15vw;
+        }
+      }
 
       .sidebar-content-wrapper {
         position: relative;
@@ -747,7 +897,11 @@
         scrollbar-width: thin;
       }
 
-      @media (min-width: 768px) { .sidebar-content-wrapper { padding-left: 10vw; } }
+      @media (min-width: 768px) {
+        .sidebar-content-wrapper {
+          padding-left: 10vw;
+        }
+      }
 
       .close-sidebar-btn {
         position: fixed;
@@ -770,7 +924,9 @@
         z-index: 1000;
       }
 
-      .close-sidebar-btn:hover { letter-spacing: 2px; }
+      .close-sidebar-btn:hover {
+        letter-spacing: 2px;
+      }
 
       .sidebar-title {
         display: flex;
@@ -808,7 +964,9 @@
         text-align: justify;
       }
 
-      .sidebar-text-container p { margin-bottom: 1rem; }
+      .sidebar-text-container p {
+        margin-bottom: 1rem;
+      }
 
       .sidebar-email {
         font-size: 0.875rem;
@@ -831,16 +989,41 @@
         border: none;
         background: transparent;
         padding: 0;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
+        transition:
+          opacity 0.4s ease,
+          visibility 0.4s ease;
       }
 
-      .sticker-btn.hidden-sticker { opacity: 0; visibility: hidden; }
+      .sticker-btn.hidden-sticker {
+        opacity: 0;
+        visibility: hidden;
+      }
     </style>
-</head>
-<body>
-    <button id="settings-trigger" class="settings-toggle" title="編輯內容" style="display: none;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+  </head>
+  <body>
+    <div id="loading-overlay" class="loading-overlay">
+      <div id="loading-icon" class="loading-icon"></div>
+    </div>
+
+    <button
+      id="settings-trigger"
+      class="settings-toggle"
+      title="編輯內容"
+      style="display: none"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+        ></path>
         <circle cx="12" cy="12" r="3"></circle>
       </svg>
     </button>
@@ -852,7 +1035,11 @@
         <button id="close-sidebar" class="close-sidebar-btn">[ ╳ ]</button>
         <h1 class="sidebar-title">
           <div class="sidebar-avatar-wrapper">
-            <img src="https://ytchu.github.io/portfolio/web/img/ID.jpg" alt="朱怡姿" class="sidebar-avatar-img">
+            <img
+              src="https://ytchu.github.io/portfolio/web/img/ID.jpg"
+              alt="朱怡姿"
+              class="sidebar-avatar-img"
+            />
           </div>
           <span style="padding-left: 8px">朱 怡姿</span>
         </h1>
@@ -864,7 +1051,9 @@
             近幾年負責聯合新聞網多個平台品牌視覺延展與網站 UI 設計，包括
             udnStyle、房地產、500
             輯、女子漾、寵物部落、選舉開票與奧運、世足等專題。早期則從事潮流服飾
-            Galoop 品牌設計師，培養對品牌核心視覺趨勢的敏銳度。畢業於台南應用科技大學 ─ 視覺傳達設計系。
+            Galoop
+            品牌設計師，培養對品牌核心視覺趨勢的敏銳度。畢業於台南應用科技大學 ─
+            視覺傳達設計系。
           </p>
           <p>
             面對 AI
@@ -881,7 +1070,11 @@
     </div>
 
     <button id="sticker" class="sticker-btn animate-sticker">
-      <img src="https://ytchu.github.io/portfolio/web/img/ID.jpg" alt="Profile" class="sidebar-avatar-img">
+      <img
+        src="https://ytchu.github.io/portfolio/web/img/ID.jpg"
+        alt="Profile"
+        class="sidebar-avatar-img"
+      />
     </button>
 
     <button id="goToTop" class="go-to-top" aria-label="Go to top">
@@ -896,7 +1089,16 @@
       <div class="editor-header">
         <h3 class="editor-title">編輯區塊內容</h3>
         <button id="editor-close" class="editor-close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
@@ -920,71 +1122,141 @@
         <div class="colors-grid">
           <div class="color-input-container">
             <label class="form-label form-sublabel">背景色 (Bg)</label>
-            <input type="color" id="editor-bg-color" class="color-picker">
+            <input type="color" id="editor-bg-color" class="color-picker" />
           </div>
           <div class="color-input-container">
             <label class="form-label form-sublabel">文字色 (Text)</label>
-            <input type="color" id="editor-text-color" class="color-picker">
+            <input type="color" id="editor-text-color" class="color-picker" />
           </div>
           <div class="color-input-container">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
               <label class="form-label form-sublabel">重點色</label>
               <div style="display: flex; gap: 4px">
-                <button type="button" onclick="setHighlightColor('#d7ffb8')" style="width: 14px; height: 14px; border-radius: 50%; background-color: #d7ffb8; border: 1px solid rgba(255, 255, 255, 0.3); cursor: pointer; padding: 0;" title="#d7ffb8"></button>
-                <button type="button" onclick="setHighlightColor('#0000001f')" style="width: 14px; height: 14px; border-radius: 50%; background-color: #0000001f; border: 1px solid rgba(255, 255, 255, 0.3); cursor: pointer; padding: 0;" title="#0000001f"></button>
+                <button
+                  type="button"
+                  onclick="setHighlightColor('#d7ffb8')"
+                  style="
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    background-color: #d7ffb8;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    cursor: pointer;
+                    padding: 0;
+                  "
+                  title="#d7ffb8"
+                ></button>
+                <button
+                  type="button"
+                  onclick="setHighlightColor('#0000001f')"
+                  style="
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    background-color: #0000001f;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    cursor: pointer;
+                    padding: 0;
+                  "
+                  title="#0000001f"
+                ></button>
               </div>
             </div>
-            <input type="text" id="editor-highlight-color" class="form-input" style="height: 2.5rem; padding: 0.3rem 0.5rem; font-size: 0.75rem" placeholder="#RRGGBB">
+            <input
+              type="text"
+              id="editor-highlight-color"
+              class="form-input"
+              style="height: 2.5rem; padding: 0.3rem 0.5rem; font-size: 0.75rem"
+              placeholder="#RRGGBB"
+            />
           </div>
         </div>
 
         <div class="form-group">
           <label class="form-label">區塊分類 (Category)</label>
-          <input type="text" id="editor-category" class="form-input">
+          <input type="text" id="editor-category" class="form-input" />
         </div>
 
         <div class="form-group">
           <label class="form-label">概念標題 (Title)</label>
-          <input type="text" id="editor-title" class="form-input">
+          <input type="text" id="editor-title" class="form-input" />
         </div>
 
         <div class="form-group">
-          <label class="form-label">概念描述 (Description) <br><span class="form-sublabel">使用 *星號* 包覆文字即可畫重點</span></label>
-          <textarea id="editor-description" rows="5" class="form-textarea"></textarea>
+          <label class="form-label"
+            >概念描述 (Description) <br /><span class="form-sublabel"
+              >使用 *星號* 包覆文字即可畫重點</span
+            ></label
+          >
+          <textarea
+            id="editor-description"
+            rows="5"
+            class="form-textarea"
+          ></textarea>
         </div>
 
         <div class="form-group">
           <label class="form-label">連結文字 (Link Text)</label>
-          <input type="text" id="editor-link-label" placeholder="例如：數據資料" class="form-input">
+          <input
+            type="text"
+            id="editor-link-label"
+            placeholder="例如：數據資料"
+            class="form-input"
+          />
         </div>
 
         <div class="form-group">
           <label class="form-label">連結網址 (Link URL)</label>
-          <input type="text" id="editor-link-url" placeholder="https://" class="form-input">
+          <input
+            type="text"
+            id="editor-link-url"
+            placeholder="https://"
+            class="form-input"
+          />
         </div>
 
         <div class="form-group">
           <label class="form-label">使用工具 (Tools)</label>
-          <input type="text" id="editor-tools" class="form-input">
+          <input type="text" id="editor-tools" class="form-input" />
         </div>
 
         <div class="section-divider">
           <h4 class="media-section-title">媒體設定 (Media)</h4>
           <div class="form-group" style="margin-bottom: 1rem">
             <label class="form-label">圖片連結 (Image URL)</label>
-            <input type="text" id="editor-image-url" placeholder="https://example.com/image.png" class="form-input">
+            <input
+              type="text"
+              id="editor-image-url"
+              placeholder="https://example.com/image.png"
+              class="form-input"
+            />
           </div>
           <div class="form-group" style="margin-bottom: 1rem">
             <label class="form-label">DotLottie 動畫連結 (.lottie URL)</label>
-            <input type="text" id="editor-lottie-url" placeholder="https://example.com/animation.lottie" class="form-input">
+            <input
+              type="text"
+              id="editor-lottie-url"
+              placeholder="https://example.com/animation.lottie"
+              class="form-input"
+            />
           </div>
           <div class="form-group" style="margin-bottom: 1rem">
-            <label class="form-label">影片連結 1 (Video 1 Vimeo/Embed URL)</label>
-            <input type="text" id="editor-video1-url" class="form-input">
+            <label class="form-label"
+              >影片連結 1 (Video 1 Vimeo/Embed URL)</label
+            >
+            <input type="text" id="editor-video1-url" class="form-input" />
           </div>
           <div class="form-group">
-            <label class="form-label">影片連結 2 (Video 2 Vimeo/Embed URL)</label>
-            <input type="text" id="editor-video2-url" class="form-input">
+            <label class="form-label"
+              >影片連結 2 (Video 2 Vimeo/Embed URL)</label
+            >
+            <input type="text" id="editor-video2-url" class="form-input" />
             <p class="form-sublabel" style="margin-top: 0.25rem">
               此系統支援同時顯示最多 2 個填入的媒體資源項目。
             </p>
@@ -995,142 +1267,178 @@
     </div>
 
     <script id="app-data" type="application/json">
-[
-  {
-    "id": 0,
-    "backgroundColor": "#ebf0f0",
-    "textColor": "#3c3c3c",
-    "highlightColor": "#d7ffb8",
-    "category": "品牌網站",
-    "title": "專案定位",
-    "description": "<b>跨品牌產品宣傳平台 — 多屬性內容整合與美學視覺策略</b>\n面對「跨品牌與多屬性產品同時露出，介面難兼顧風格包容性與高端形象」的挑戰，以「傳遞質感生活」為核心，運用嚴謹網格與大面積負空間，解決多樣內容帶來的視覺疲勞，*區塊標題藉斜線打破僵硬感，並結合半透明雷射絢彩微互動，引導視線*。以理性邏輯驅動視覺美學，提升平台視覺識別度與信任感。",
-    "tools": "Figma",
-    "video1Url": "https://player.vimeo.com/video/1199184951?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "video2Url": "https://player.vimeo.com/video/1199315838?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "imageUrl": "",
-    "lottieUrl": ""
-  },
-  {
-    "id": 1,
-    "backgroundColor": "#8c7d55",
-    "textColor": "#FFFFFF",
-    "highlightColor": "#0000001f",
-    "category": "宣傳網站",
-    "title": "專案定位",
-    "description": "<b>系列主題投稿宣傳網站 — 設計系統建構與視覺高延展模組化工作流</b>\n面對「規格化網頁中如何建立高延展性與故事性視覺」的挑戰。核心解法以維多利亞復古插畫風融合低飽和色彩與顆粒感，營造文學氣質的沉浸式氛圍。*透過建立清晰的視覺系統與編排模組設計，確保不同設計師接手仍維持核心一致性；在流暢承載主題更換的同時，成功縮短開發時程並大幅降低溝通成本*。",
-    "tools": "Figma / Midjourney /  Photoshop ",
-    "video1Url": "https://player.vimeo.com/video/1200978880?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "video2Url": "https://player.vimeo.com/video/1200974579?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "imageUrl": "",
-    "lottieUrl": "",
-    "linkLabel": "專案介紹",
-    "linkUrl": "https://www.behance.net/gallery/251460683/_"
-  },
-  {
-    "id": 2,
-    "backgroundColor": "#ad513e",
-    "textColor": "#FFFFFF",
-    "highlightColor": "#0000001f",
-    "category": "活動網站",
-    "title": "專案定位",
-    "description": "<b>IP 線下聯名活動網頁 — O2O 流量轉化與會員成長互動策略</b>\n以行銷企劃思維結合扭蛋與圖鑑蒐集概念，建立具隨機性與成就感的遊戲化互動。*大型扭蛋機與醒目的「登入抽扭蛋」按鈕作為行動呼籲，搭配圖鑑進度條引導使用者持續回訪*。部分插畫運用 AI 工具協作，呈現臺灣街頭小吃的日常與人情味。",
-    "tools": " Figma / Chatgpt / Phase",
-    "video1Url": "https://player.vimeo.com/video/1110927058?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "video2Url": "https://player.vimeo.com/video/1110627648?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "imageUrl": "",
-    "lottieUrl": "",
-    "linkUrl": "https://event.udn.com/bd_500bowls_2025",
-    "linkLabel": "活動網站"
-  },
-  {
-    "id": 3,
-    "backgroundColor": "#9b8778",
-    "textColor": "#ffffff",
-    "highlightColor": "#0000001f",
-    "category": "時尚網站",
-    "title": "專案定位",
-    "description": "<b>時尚媒體網站重構 — 跨世代體驗升級與商業版位留存策略</b>\n核心解法在延續經典色系下重組資訊架構，將既有廣告無縫導入新版響應式網格。視覺採灰階中性色搭配規律排版，使內容成為焦點；並*透過懸停軸線與圖片亮度的細膩微互動精準引導視線。在優化跨世代用戶體驗與守護既有商業價值的同時，完美平衡商業變現與系統升級需求*。",
-    "tools": "Figma",
-    "video1Url": "https://player.vimeo.com/video/1109498668?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "video2Url": "https://player.vimeo.com/video/1110539479?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "imageUrl": "",
-    "lottieUrl": "",
-    "layout": "column",
-    "linkUrl": "https://style.udn.com/",
-    "linkLabel": "官方網站"
-  },
-  {
-    "id": 4,
-    "backgroundColor": "#05070b",
-    "textColor": "#ffffff",
-    "highlightColor": "#0000001f",
-    "category": "影像裝置",
-    "title": "設計概念",
-    "description": "<b>整合全球氣候數據的視覺前端特效實驗頁</b>\n以 AI 協作程式突破限制，營造未來與現實的衝突感。靜置時為影像裝置，啟動後串連全球氣候數據，透過介面切換打破物理地域限制，將即時天色與白噪音導入室內。運用前端特效流暢切換情境，為用戶帶來顛覆傳統網頁、融合視覺與聽覺的沉浸式空間互動體驗。",
-    "tools": "Figma Make / Midjourney / Photoshop",
-    "video1Url": "https://player.vimeo.com/video/1200516716?share=copy&fl=sv&fe=ci?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "video2Url": "",
-    "imageUrl": "",
-    "lottieUrl": "",
-    "linkUrl": "https://chu-weather.figma.site/",
-    "linkLabel": "影像裝置",
-    "layout": "row"
-  },
-  {
-    "id": 5,
-    "backgroundColor": "#f6e3e1",
-    "textColor": "#3c3c3c",
-    "highlightColor": "#d7ffb8",
-    "category": "前台",
-    "title": "專案定位",
-    "description": "<b>愛體驗入口 — 女性媒體品牌延展與高轉化表單設計</b>\n以「品牌一致、結構清晰、高效操作」為核心，建構兼顧品牌感與高轉化的體驗入口。核心解法以導入直覺輸入框、清晰必填提示與結構化選項，大幅降低填寫阻力。*透過一頁式設計減少跳轉，在延續女子漾品牌視覺的同時，以試用表單體驗，提升產品黏著度與商務轉化指標*。",
-    "tools": "Figma",
-    "video1Url": "https://player.vimeo.com/video/1111318807?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "video2Url": "",
-    "imageUrl": "",
-    "lottieUrl": "",
-    "layout": "row"
-  },
-  {
-    "id": 6,
-    "backgroundColor": "#f6e3e1",
-    "textColor": "#111111",
-    "highlightColor": "#d7ffb8",
-    "category": "會員後台",
-    "title": "專案定位",
-    "description": "<b>創作者一站式管理後台 — 多功能整合與低認知負載系統設計</b>\n面對「創作者需頻繁切換投稿、收益與體驗活動等繁雜功能」的挑戰。核心解法，重組高密度數據，將多源收益、稿件進度與活動申請整合為一站式後台。*透過統一跨分頁操作邏輯與清晰的表格式排版，以「低認知負載」的極致系統效率，大幅降低使用者的學習成本與操作阻力*。",
-    "tools": " Figma",
-    "video1Url": "https://player.vimeo.com/video/1111342509?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-    "video2Url": "",
-    "imageUrl": "",
-    "lottieUrl": "",
-    "layout": "row"
-  },
-  {
-    "id": 7,
-    "backgroundColor": "#69195f",
-    "textColor": "#ffffff",
-    "highlightColor": "#0000001f",
-    "category": "數據圖表",
-    "title": "專案定位",
-    "description": "<b>即時公共數據圖表 — 視覺轉化與自動化工作流</b>\n面對「龐雜疫情數據，快速轉化數據圖表」的挑戰。核心解法透過資訊視覺化，建立清晰規範，並*首度為公司導入 Google Sheets Sync 與 Figma 的數據同步機制*。在因應每日數據更新時，*實現圖表數值與熱區配色的快速匯入與導出，大幅提升效率並降低人工錯誤*，完美融合技術實作與視覺轉化。",
-    "tools": " Figma / Excel 公式及函數 / Google Sheets Sync",
-    "video1Url": "",
-    "video2Url": "",
-    "imageUrl": "https://ytchu.github.io/portfolio/web/img/COVID19-map.gif",
-    "lottieUrl": "",
-    "layout": "row",
-    "linkUrl": "https://www.behance.net/gallery/251439745/_",
-    "linkLabel": "專案介紹"
-  }
-]
+      [
+        {
+          "id": 0,
+          "backgroundColor": "#ebf0f0",
+          "textColor": "#3c3c3c",
+          "highlightColor": "#d7ffb8",
+          "category": "品牌網站",
+          "title": "專案定位",
+          "description": "<b>跨品牌產品宣傳平台 — 多屬性內容整合與美學視覺策略</b>\n面對「跨品牌與多屬性產品同時露出，介面難兼顧風格包容性與高端形象」的挑戰，以「傳遞質感生活」為核心，運用嚴謹網格與大面積負空間，解決多樣內容帶來的視覺疲勞，*區塊標題藉斜線打破僵硬感，並結合半透明雷射絢彩微互動，引導視線*。以理性邏輯驅動視覺美學，提升平台視覺識別度與信任感。",
+          "tools": "Figma",
+          "video1Url": "https://player.vimeo.com/video/1199184951?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "video2Url": "https://player.vimeo.com/video/1199315838?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "imageUrl": "",
+          "lottieUrl": ""
+        },
+        {
+          "id": 1,
+          "backgroundColor": "#8c7d55",
+          "textColor": "#FFFFFF",
+          "highlightColor": "#0000001f",
+          "category": "宣傳網站",
+          "title": "專案定位",
+          "description": "<b>系列主題投稿宣傳網站 — 設計系統建構與視覺高延展模組化工作流</b>\n面對「規格化網頁中如何建立高延展性與故事性視覺」的挑戰。核心解法以維多利亞復古插畫風融合低飽和色彩與顆粒感，營造文學氣質的沉浸式氛圍。*透過建立清晰的視覺系統與編排模組設計，確保不同設計師接手仍維持核心一致性；在流暢承載主題更換的同時，成功縮短開發時程並大幅降低溝通成本*。",
+          "tools": "Figma / Midjourney /  Photoshop ",
+          "video1Url": "https://player.vimeo.com/video/1200978880?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "video2Url": "https://player.vimeo.com/video/1200974579?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "imageUrl": "",
+          "lottieUrl": "",
+          "linkLabel": "專案介紹",
+          "linkUrl": "https://www.behance.net/gallery/251460683/_"
+        },
+        {
+          "id": 2,
+          "backgroundColor": "#ad513e",
+          "textColor": "#FFFFFF",
+          "highlightColor": "#0000001f",
+          "category": "活動網站",
+          "title": "專案定位",
+          "description": "<b>IP 線下聯名活動網頁 — O2O 流量轉化與會員成長互動策略</b>\n以行銷企劃思維結合扭蛋與圖鑑蒐集概念，建立具隨機性與成就感的遊戲化互動。*大型扭蛋機與醒目的「登入抽扭蛋」按鈕作為行動呼籲，搭配圖鑑進度條引導使用者持續回訪*。部分插畫運用 AI 工具協作，呈現臺灣街頭小吃的日常與人情味。",
+          "tools": " Figma / Chatgpt / Phase",
+          "video1Url": "https://player.vimeo.com/video/1110927058?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "video2Url": "https://player.vimeo.com/video/1110627648?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "imageUrl": "",
+          "lottieUrl": "",
+          "linkUrl": "https://event.udn.com/bd_500bowls_2025",
+          "linkLabel": "活動網站"
+        },
+        {
+          "id": 3,
+          "backgroundColor": "#9b8778",
+          "textColor": "#ffffff",
+          "highlightColor": "#0000001f",
+          "category": "時尚網站",
+          "title": "專案定位",
+          "description": "<b>時尚媒體網站重構 — 跨世代體驗升級與商業版位留存策略</b>\n核心解法在延續經典色系下重組資訊架構，將既有廣告無縫導入新版響應式網格。視覺採灰階中性色搭配規律排版，使內容成為焦點；並*透過懸停軸線與圖片亮度的細膩微互動精準引導視線。在優化跨世代用戶體驗與守護既有商業價值的同時，完美平衡商業變現與系統升級需求*。",
+          "tools": "Figma",
+          "video1Url": "https://player.vimeo.com/video/1109498668?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "video2Url": "https://player.vimeo.com/video/1110539479?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "imageUrl": "",
+          "lottieUrl": "",
+          "layout": "column",
+          "linkUrl": "https://style.udn.com/",
+          "linkLabel": "官方網站"
+        },
+        {
+          "id": 4,
+          "backgroundColor": "#05070b",
+          "textColor": "#ffffff",
+          "highlightColor": "#0000001f",
+          "category": "影像裝置",
+          "title": "設計概念",
+          "description": "<b>整合全球氣候數據的視覺前端特效實驗頁</b>\n以 AI 協作程式突破限制，營造未來與現實的衝突感。靜置時為影像裝置，啟動後串連全球氣候數據，透過介面切換打破物理地域限制，將即時天色與白噪音導入室內。運用前端特效流暢切換情境，為用戶帶來顛覆傳統網頁、融合視覺與聽覺的沉浸式空間互動體驗。",
+          "tools": "Figma Make / Midjourney / Photoshop",
+          "video1Url": "https://player.vimeo.com/video/1200516716?share=copy&fl=sv&fe=ci?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "video2Url": "",
+          "imageUrl": "",
+          "lottieUrl": "",
+          "linkUrl": "https://chu-weather.figma.site/",
+          "linkLabel": "影像裝置",
+          "layout": "row"
+        },
+        {
+          "id": 5,
+          "backgroundColor": "#f6e3e1",
+          "textColor": "#3c3c3c",
+          "highlightColor": "#d7ffb8",
+          "category": "前台",
+          "title": "專案定位",
+          "description": "<b>愛體驗入口 — 女性媒體品牌延展與高轉化表單設計</b>\n以「品牌一致、結構清晰、高效操作」為核心，建構兼顧品牌感與高轉化的體驗入口。核心解法以導入直覺輸入框、清晰必填提示與結構化選項，大幅降低填寫阻力。*透過一頁式設計減少跳轉，在延續女子漾品牌視覺的同時，以試用表單體驗，提升產品黏著度與商務轉化指標*。",
+          "tools": "Figma",
+          "video1Url": "https://player.vimeo.com/video/1111318807?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "video2Url": "",
+          "imageUrl": "",
+          "lottieUrl": "",
+          "layout": "row"
+        },
+        {
+          "id": 6,
+          "backgroundColor": "#f6e3e1",
+          "textColor": "#111111",
+          "highlightColor": "#d7ffb8",
+          "category": "會員後台",
+          "title": "專案定位",
+          "description": "<b>創作者一站式管理後台 — 多功能整合與低認知負載系統設計</b>\n面對「創作者需頻繁切換投稿、收益與體驗活動等繁雜功能」的挑戰。核心解法，重組高密度數據，將多源收益、稿件進度與活動申請整合為一站式後台。*透過統一跨分頁操作邏輯與清晰的表格式排版，以「低認知負載」的極致系統效率，大幅降低使用者的學習成本與操作阻力*。",
+          "tools": " Figma",
+          "video1Url": "https://player.vimeo.com/video/1111342509?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+          "video2Url": "",
+          "imageUrl": "",
+          "lottieUrl": "",
+          "layout": "row"
+        },
+        {
+          "id": 7,
+          "backgroundColor": "#69195f",
+          "textColor": "#ffffff",
+          "highlightColor": "#0000001f",
+          "category": "數據圖表",
+          "title": "專案定位",
+          "description": "<b>即時公共數據圖表 — 視覺轉化與自動化工作流</b>\n面對「龐雜疫情數據，快速轉化數據圖表」的挑戰。核心解法透過資訊視覺化，建立清晰規範，並*首度為公司導入 Google Sheets Sync 與 Figma 的數據同步機制*。在因應每日數據更新時，*實現圖表數值與熱區配色的快速匯入與導出，大幅提升效率並降低人工錯誤*，完美融合技術實作與視覺轉化。",
+          "tools": " Figma / Excel 公式及函數 / Google Sheets Sync",
+          "video1Url": "",
+          "video2Url": "",
+          "imageUrl": "https://ytchu.github.io/portfolio/web/img/COVID19-map.gif",
+          "lottieUrl": "",
+          "layout": "row",
+          "linkUrl": "https://www.behance.net/gallery/251439745/_",
+          "linkLabel": "專案介紹"
+        }
+      ]
     </script>
     <script>
       const LAYOUTS = {
-        TL: [{ x: 0, y: 0, w: 3, h: 3 }, { x: 3, y: 0, w: 2, h: 2 }, { x: 0, y: 3, w: 2, h: 2 }, { x: 3, y: 3, w: 2, h: 2 }, { x: 3, y: 2, w: 1, h: 1 }, { x: 4, y: 2, w: 1, h: 1 }, { x: 2, y: 3, w: 1, h: 1 }, { x: 2, y: 4, w: 1, h: 1 }],
-        TR: [{ x: 2, y: 0, w: 3, h: 3 }, { x: 0, y: 0, w: 2, h: 2 }, { x: 3, y: 3, w: 2, h: 2 }, { x: 0, y: 3, w: 2, h: 2 }, { x: 1, y: 2, w: 1, h: 1 }, { x: 0, y: 2, w: 1, h: 1 }, { x: 2, y: 3, w: 1, h: 1 }, { x: 2, y: 4, w: 1, h: 1 }],
-        BL: [{ x: 0, y: 2, w: 3, h: 3 }, { x: 3, y: 3, w: 2, h: 2 }, { x: 0, y: 0, w: 2, h: 2 }, { x: 3, y: 0, w: 2, h: 2 }, { x: 3, y: 2, w: 1, h: 1 }, { x: 4, y: 2, w: 1, h: 1 }, { x: 2, y: 1, w: 1, h: 1 }, { x: 2, y: 0, w: 1, h: 1 }],
-        BR: [{ x: 2, y: 2, w: 3, h: 3 }, { x: 0, y: 3, w: 2, h: 2 }, { x: 3, y: 0, w: 2, h: 2 }, { x: 0, y: 0, w: 2, h: 2 }, { x: 1, y: 2, w: 1, h: 1 }, { x: 0, y: 2, w: 1, h: 1 }, { x: 2, y: 1, w: 1, h: 1 }, { x: 2, y: 0, w: 1, h: 1 }],
+        TL: [
+          { x: 0, y: 0, w: 3, h: 3 },
+          { x: 3, y: 0, w: 2, h: 2 },
+          { x: 0, y: 3, w: 2, h: 2 },
+          { x: 3, y: 3, w: 2, h: 2 },
+          { x: 3, y: 2, w: 1, h: 1 },
+          { x: 4, y: 2, w: 1, h: 1 },
+          { x: 2, y: 3, w: 1, h: 1 },
+          { x: 2, y: 4, w: 1, h: 1 },
+        ],
+        TR: [
+          { x: 2, y: 0, w: 3, h: 3 },
+          { x: 0, y: 0, w: 2, h: 2 },
+          { x: 3, y: 3, w: 2, h: 2 },
+          { x: 0, y: 3, w: 2, h: 2 },
+          { x: 1, y: 2, w: 1, h: 1 },
+          { x: 0, y: 2, w: 1, h: 1 },
+          { x: 2, y: 3, w: 1, h: 1 },
+          { x: 2, y: 4, w: 1, h: 1 },
+        ],
+        BL: [
+          { x: 0, y: 2, w: 3, h: 3 },
+          { x: 3, y: 3, w: 2, h: 2 },
+          { x: 0, y: 0, w: 2, h: 2 },
+          { x: 3, y: 0, w: 2, h: 2 },
+          { x: 3, y: 2, w: 1, h: 1 },
+          { x: 4, y: 2, w: 1, h: 1 },
+          { x: 2, y: 1, w: 1, h: 1 },
+          { x: 2, y: 0, w: 1, h: 1 },
+        ],
+        BR: [
+          { x: 2, y: 2, w: 3, h: 3 },
+          { x: 0, y: 3, w: 2, h: 2 },
+          { x: 3, y: 0, w: 2, h: 2 },
+          { x: 0, y: 0, w: 2, h: 2 },
+          { x: 1, y: 2, w: 1, h: 1 },
+          { x: 0, y: 2, w: 1, h: 1 },
+          { x: 2, y: 1, w: 1, h: 1 },
+          { x: 2, y: 0, w: 1, h: 1 },
+        ],
       };
 
       let blocks = [];
@@ -1142,6 +1450,76 @@
       } catch (e) {
         console.error("Failed to parse app-data", e);
       }
+
+      function initLoader() {
+        const loadingOverlay = document.getElementById("loading-overlay");
+        const loadingIcon = document.getElementById("loading-icon");
+        if (!loadingOverlay || !loadingIcon) return;
+
+        for (let i = 0; i < 8; i++) {
+          const block = document.createElement("div");
+          block.className = "loading-block";
+          loadingIcon.appendChild(block);
+        }
+
+        const layoutsArr = ["TL", "TR", "BR", "BL"];
+        let shuffleCount = 0;
+        let loaderInterval;
+        let loaderPositions = [0, 1, 2, 3, 4, 5, 6, 7];
+
+        function updateLoader() {
+          for (let i = loaderPositions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [loaderPositions[i], loaderPositions[j]] = [
+              loaderPositions[j],
+              loaderPositions[i],
+            ];
+          }
+
+          const layoutName = layoutsArr[shuffleCount % layoutsArr.length];
+          const layout = LAYOUTS[layoutName];
+          const iconBlocks = loadingIcon.children;
+
+          for (let i = 0; i < 8; i++) {
+            const slot = layout[loaderPositions[i]];
+            const el = iconBlocks[i];
+            if (el && slot) {
+              el.style.transitionDelay = `${i * 0.03}s`; // 錯落的時間差
+              el.style.left = `${slot.x * 20}%`;
+              el.style.top = `${slot.y * 20}%`;
+              el.style.width = `${slot.w * 20}%`;
+              el.style.height = `${slot.h * 20}%`;
+              el.style.backgroundColor = `rgba(255, 255, 255, ${slot.w === 3 ? 0.9 : slot.w === 2 ? 0.7 : 0.5})`;
+            }
+          }
+          shuffleCount++;
+        }
+
+        updateLoader();
+        loaderInterval = setInterval(updateLoader, 600);
+
+        setTimeout(() => {
+          clearInterval(loaderInterval);
+
+          // 優化離場動畫：讓方塊縮小並消失
+          const iconBlocks = loadingIcon.children;
+          for (let i = 0; i < iconBlocks.length; i++) {
+            iconBlocks[i].style.transition =
+              `all 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.04}s`;
+            iconBlocks[i].style.transform = "scale(0.2)";
+            iconBlocks[i].style.opacity = "0";
+          }
+
+          // 稍後再將整個黑色背景淡出
+          setTimeout(() => {
+            loadingOverlay.classList.add("hidden");
+            setTimeout(() => {
+              loadingOverlay.style.display = "none";
+            }, 600);
+          }, 400);
+        }, 2000);
+      }
+      initLoader();
 
       // Optimize: Cache DOM elements
       const container = document.getElementById("app-container");
@@ -1158,9 +1536,12 @@
         if (window.innerWidth < 1024) return;
         for (let i = currentPositions.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          [currentPositions[i], currentPositions[j]] = [currentPositions[j], currentPositions[i]];
+          [currentPositions[i], currentPositions[j]] = [
+            currentPositions[j],
+            currentPositions[i],
+          ];
         }
-        
+
         const blockAtSlotZero = currentPositions.indexOf(0);
         hoveredId = blockAtSlotZero !== -1 ? blockAtSlotZero : 0;
 
@@ -1171,7 +1552,8 @@
 
       function resetIdleTimer() {
         if (idleTimeoutId) clearTimeout(idleTimeoutId);
-        if (window.innerWidth >= 1024) idleTimeoutId = setTimeout(shuffleBlocks, 10000);
+        if (window.innerWidth >= 1024)
+          idleTimeoutId = setTimeout(shuffleBlocks, 10000);
       }
 
       function getLayoutQuadrant(x, y) {
@@ -1182,14 +1564,18 @@
       }
 
       function getSlotAt(layoutName, col, row) {
-        return LAYOUTS[layoutName].findIndex(slot => 
-          col >= slot.x && col < slot.x + slot.w && row >= slot.y && row < slot.y + slot.h
+        return LAYOUTS[layoutName].findIndex(
+          (slot) =>
+            col >= slot.x &&
+            col < slot.x + slot.w &&
+            row >= slot.y &&
+            row < slot.y + slot.h,
         );
       }
 
       function renderDescriptionHtml(text, highlightColor) {
         if (!text) return "";
-        return text.replace(/(\*[^*\n]+\*)/g, match => {
+        return text.replace(/(\*[^*\n]+\*)/g, (match) => {
           const content = match.slice(1, -1);
           return `<span class="highlight-span" style="background: linear-gradient(to bottom, transparent 50%, ${highlightColor} 50%)">${content}</span>`;
         });
@@ -1203,29 +1589,51 @@
         } else if (media.type === "lottie") {
           return `<div class="media-item ${media.aspect}"><dotlottie-player src="${media.url}" background="transparent" speed="1" class="lottie-player" loop autoplay></dotlottie-player></div>`;
         }
-        return '';
+        return "";
       }
 
       function renderBlockContents(blockId) {
         const block = blocks[blockId];
         let blockEl = document.getElementById(`block-${blockId}`);
-        
+
         if (!blockEl) {
-          blockEl = document.createElement('div');
+          blockEl = document.createElement("div");
           blockEl.id = `block-${blockId}`;
-          blockEl.className = 'block-element';
+          blockEl.className = "block-element";
           container.appendChild(blockEl);
           blockElements[blockId] = blockEl;
         }
 
         const mediaItems = [];
-        if (block.imageUrl) mediaItems.push({ type: "image", url: block.imageUrl, aspect: "aspect-auto" });
-        if (block.lottieUrl) mediaItems.push({ type: "lottie", url: block.lottieUrl, aspect: "aspect-square" });
-        if (block.video1Url) mediaItems.push({ type: "video", url: block.video1Url, aspect: "aspect-video" });
-        if (block.video2Url) mediaItems.push({ type: "video", url: block.video2Url, aspect: "aspect-vertical" });
+        if (block.imageUrl)
+          mediaItems.push({
+            type: "image",
+            url: block.imageUrl,
+            aspect: "aspect-auto",
+          });
+        if (block.lottieUrl)
+          mediaItems.push({
+            type: "lottie",
+            url: block.lottieUrl,
+            aspect: "aspect-square",
+          });
+        if (block.video1Url)
+          mediaItems.push({
+            type: "video",
+            url: block.video1Url,
+            aspect: "aspect-video",
+          });
+        if (block.video2Url)
+          mediaItems.push({
+            type: "video",
+            url: block.video2Url,
+            aspect: "aspect-vertical",
+          });
 
-        const mediaHtml = mediaItems.slice(0, 2).map(createMediaHtml).join('') || '<div class="no-media-message">No Media Added</div>';
-        
+        const mediaHtml =
+          mediaItems.slice(0, 2).map(createMediaHtml).join("") ||
+          '<div class="no-media-message">No Media Added</div>';
+
         const innerContentHtml = `
           <div class="block-inner-content ${block.layout === "row" ? "layout-row" : ""}">
             <div class="header-section">
@@ -1273,12 +1681,14 @@
         }
 
         const blockAtSlotZero = currentPositions.indexOf(0);
-        const actualSlotZeroBlock = blockAtSlotZero !== -1 ? blockAtSlotZero : 0;
+        const actualSlotZeroBlock =
+          blockAtSlotZero !== -1 ? blockAtSlotZero : 0;
 
         blocks.forEach((_, blockId) => {
           let slotIndex = currentPositions[blockId];
           if (blockId === hoveredId) slotIndex = 0;
-          else if (blockId === actualSlotZeroBlock) slotIndex = currentPositions[hoveredId];
+          else if (blockId === actualSlotZeroBlock)
+            slotIndex = currentPositions[hoveredId];
 
           const slot = LAYOUTS[activeLayout][slotIndex];
           const el = blockElements[blockId];
@@ -1291,7 +1701,7 @@
               height: ${slot.h * 20}%;
               z-index: ${blockId === hoveredId ? "10" : "1"};
               --lg-scale: ${slot.w / 3};
-              --dz-margin: ${slot.w === 1 ? '35%' : '25%'};
+              --dz-margin: ${slot.w === 1 ? "35%" : "25%"};
               background-color: ${blocks[blockId].backgroundColor};
               color: ${blocks[blockId].textColor};
             `;
@@ -1303,7 +1713,7 @@
       // Optimize: Use requestAnimationFrame for pointermove
       function handlePointerMove(e) {
         if (window.innerWidth < 1024 || !container) return;
-        
+
         if (!ticking) {
           window.requestAnimationFrame(() => {
             processPointerMove(e.clientX, e.clientY);
@@ -1333,17 +1743,25 @@
         const margin = slot.w === 1 ? 0.35 : 0.25;
 
         // Add deadzone to avoid flickering
-        if (x >= slotLeft + slotWidth * margin && x <= slotLeft + slotWidth * (1 - margin) &&
-            y >= slotTop + slotHeight * margin && y <= slotTop + slotHeight * (1 - margin)) {
-          
+        if (
+          x >= slotLeft + slotWidth * margin &&
+          x <= slotLeft + slotWidth * (1 - margin) &&
+          y >= slotTop + slotHeight * margin &&
+          y <= slotTop + slotHeight * (1 - margin)
+        ) {
           const blockAtSlotZero = currentPositions.indexOf(0);
           let blockId = -1;
-          
+
           if (slotIndex === 0) blockId = hoveredId;
-          else if (slotIndex === currentPositions[hoveredId]) blockId = blockAtSlotZero;
+          else if (slotIndex === currentPositions[hoveredId])
+            blockId = blockAtSlotZero;
           else blockId = currentPositions.indexOf(slotIndex);
 
-          if (blockId !== hoveredId && blockId >= 0 && blockId < blocks.length) {
+          if (
+            blockId !== hoveredId &&
+            blockId >= 0 &&
+            blockId < blocks.length
+          ) {
             hoveredId = blockId;
             activeLayout = getLayoutQuadrant(col, row);
             updateLayout();
@@ -1380,38 +1798,49 @@
       });
 
       function setHighlightColor(color) {
-        const input = document.getElementById('editor-highlight-color');
+        const input = document.getElementById("editor-highlight-color");
         input.value = color;
-        input.dispatchEvent(new Event('input'));
+        input.dispatchEvent(new Event("input"));
       }
       window.setHighlightColor = setHighlightColor;
 
       const formInputMap = {
-        'editor-layout': 'layout',
-        'editor-bg-color': 'backgroundColor',
-        'editor-text-color': 'textColor',
-        'editor-highlight-color': 'highlightColor',
-        'editor-link-label': 'linkLabel',
-        'editor-link-url': 'linkUrl',
-        'editor-category': 'category',
-        'editor-title': 'title',
-        'editor-description': 'description',
-        'editor-tools': 'tools',
-        'editor-image-url': 'imageUrl',
-        'editor-lottie-url': 'lottieUrl',
-        'editor-video1-url': 'video1Url',
-        'editor-video2-url': 'video2Url'
+        "editor-layout": "layout",
+        "editor-bg-color": "backgroundColor",
+        "editor-text-color": "textColor",
+        "editor-highlight-color": "highlightColor",
+        "editor-link-label": "linkLabel",
+        "editor-link-url": "linkUrl",
+        "editor-category": "category",
+        "editor-title": "title",
+        "editor-description": "description",
+        "editor-tools": "tools",
+        "editor-image-url": "imageUrl",
+        "editor-lottie-url": "lottieUrl",
+        "editor-video1-url": "video1Url",
+        "editor-video2-url": "video2Url",
       };
 
       function updateEditorFields() {
         const block = blocks[editingBlockId];
         if (!block) return;
-        
-        selectBlock.innerHTML = blocks.map(b => `<option value="${b.id}" ${b.id === editingBlockId ? "selected" : ""}>區塊 ${b.id + 1} - ${b.category || "Unnamed"}</option>`).join("");
-        
+
+        selectBlock.innerHTML = blocks
+          .map(
+            (b) =>
+              `<option value="${b.id}" ${b.id === editingBlockId ? "selected" : ""}>區塊 ${b.id + 1} - ${b.category || "Unnamed"}</option>`,
+          )
+          .join("");
+
         for (const [id, prop] of Object.entries(formInputMap)) {
           const el = document.getElementById(id);
-          if (el) el.value = prop === 'layout' ? (block.layout === 'row' ? 'row' : 'column') : (block[prop] || "");
+          if (el)
+            el.value =
+              prop === "layout"
+                ? block.layout === "row"
+                  ? "row"
+                  : "column"
+                : block[prop] || "";
         }
       }
 
@@ -1425,8 +1854,11 @@
           blocks[editingBlockId][prop] = e.target.value;
           renderBlockContents(editingBlockId);
           if (prop === "category") {
-            const opt = selectBlock.querySelector(`option[value="${editingBlockId}"]`);
-            if (opt) opt.textContent = `區塊 ${editingBlockId + 1} - ${blocks[editingBlockId].category || "Unnamed"}`;
+            const opt = selectBlock.querySelector(
+              `option[value="${editingBlockId}"]`,
+            );
+            if (opt)
+              opt.textContent = `區塊 ${editingBlockId + 1} - ${blocks[editingBlockId].category || "Unnamed"}`;
           }
         });
       }
@@ -1442,21 +1874,36 @@
       });
 
       function init() {
-        container.innerHTML = '';
+        container.innerHTML = "";
         blocks.forEach((_, i) => renderBlockContents(i));
         updateLayout();
 
         if (container) {
-          container.addEventListener("pointermove", handlePointerMove, { passive: true });
+          container.addEventListener("pointermove", handlePointerMove, {
+            passive: true,
+          });
           container.addEventListener("pointerleave", handlePointerLeave);
         }
 
-        const activeEvents = ['mousemove', 'pointermove', 'mousedown', 'keydown', 'scroll', 'touchstart'];
-        activeEvents.forEach(evt => window.addEventListener(evt, resetIdleTimer, { passive: true }));
+        const activeEvents = [
+          "mousemove",
+          "pointermove",
+          "mousedown",
+          "keydown",
+          "scroll",
+          "touchstart",
+        ];
+        activeEvents.forEach((evt) =>
+          window.addEventListener(evt, resetIdleTimer, { passive: true }),
+        );
         resetIdleTimer();
       }
 
-      if (document.readyState === "complete" || document.readyState === "interactive") init();
+      if (
+        document.readyState === "complete" ||
+        document.readyState === "interactive"
+      )
+        init();
       else document.addEventListener("DOMContentLoaded", init);
 
       // Export HTML
@@ -1465,11 +1912,17 @@
         exportBtn.addEventListener("click", () => {
           const docClone = document.documentElement.cloneNode(true);
           const dataScript = docClone.querySelector("#app-data");
-          if (dataScript) dataScript.textContent = "\n" + JSON.stringify(blocks, null, 2) + "\n";
-          
+          if (dataScript)
+            dataScript.textContent =
+              "\n" + JSON.stringify(blocks, null, 2) + "\n";
+
           const cloneContainer = docClone.querySelector("#app-container");
           if (cloneContainer) {
-            cloneContainer.innerHTML = blocks.map((_, i) => `<div id="block-${i}" class="block-element"></div>`).join('');
+            cloneContainer.innerHTML = blocks
+              .map(
+                (_, i) => `<div id="block-${i}" class="block-element"></div>`,
+              )
+              .join("");
             cloneContainer.removeAttribute("style");
           }
 
@@ -1478,11 +1931,19 @@
           if (toggle) toggle.style.display = "block";
           docClone.querySelector("#sidebar-panel")?.classList.remove("open");
           docClone.querySelector("#sidebar-backdrop")?.classList.remove("open");
-          docClone.querySelector("#sticker")?.classList.remove("hidden-sticker");
+          docClone
+            .querySelector("#sticker")
+            ?.classList.remove("hidden-sticker");
 
-          docClone.querySelectorAll('script[type="module"][src*="vite"], script[src*="client"]').forEach(s => s.remove());
+          docClone
+            .querySelectorAll(
+              'script[type="module"][src*="vite"], script[src*="client"]',
+            )
+            .forEach((s) => s.remove());
 
-          const blob = new Blob(["<!DOCTYPE html>\n" + docClone.outerHTML], { type: "text/html;charset=utf-8" });
+          const blob = new Blob(["<!DOCTYPE html>\n" + docClone.outerHTML], {
+            type: "text/html;charset=utf-8",
+          });
           const url = URL.createObjectURL(blob);
           const a = document.createElement("a");
           a.href = url;
@@ -1494,8 +1955,14 @@
 
       // Sidebar & Scroll
       const goTopBtn = document.getElementById("goToTop");
-      window.addEventListener("scroll", () => goTopBtn.classList.toggle("visible", window.scrollY > 300), { passive: true });
-      goTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      window.addEventListener(
+        "scroll",
+        () => goTopBtn.classList.toggle("visible", window.scrollY > 300),
+        { passive: true },
+      );
+      goTopBtn.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: "smooth" }),
+      );
 
       const sticker = document.getElementById("sticker");
       const sidebarPanel = document.getElementById("sidebar-panel");
@@ -1513,6 +1980,5 @@
       closeSidebarBtn.addEventListener("click", () => toggleSidebar(false));
       sidebarBackdrop.addEventListener("click", () => toggleSidebar(false));
     </script>
-</body>
+  </body>
 </html>
-
