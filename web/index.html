@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="朱 怡姿 (Yitzu Chu) 的個人作品集，展示 UI/UX 設計、網頁開發與專案成果。" />
+    <meta name="keywords" content="朱 怡姿, Yitzu Chu, 作品集, UI/UX, 網頁設計, 前端開發, Portfolio" />
     <title>朱 怡姿 | yitzu.chu@gmail.com</title>
     <script
       type="module"
@@ -27,7 +29,7 @@
         background-color: #000000;
         font-family: var(--font-sans);
         font-weight: 300;
-        overflow-x: hidden;
+        overflow: hidden;
         color: #ffffff;
       }
 
@@ -43,14 +45,25 @@
 
       .app-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
-        min-height: 100vh;
+        height: 100vh;
+        height: 100dvh;
         background-color: #000000;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .app-container::-webkit-scrollbar {
+        display: none;
       }
 
       @media (min-width: 1024px) {
         .app-container {
+          display: block;
           height: 100vh;
           position: relative;
           overflow: hidden;
@@ -83,18 +96,28 @@
       .block-element {
         position: relative;
         width: 100%;
-        min-height: 100vh;
-        display: flex;
-        align-items: stretch;
-        justify-content: start;
-        overflow: hidden;
+        flex: 0 0 100%;
+        height: 100vh;
+        height: 100dvh;
+        display: block;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-snap-align: start;
         transition: all 900ms cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       @media (min-width: 1024px) {
         .block-element {
           position: absolute;
-          min-height: 0;
+          top: var(--block-top);
+          left: var(--block-left);
+          width: var(--block-width);
+          height: var(--block-height);
+          flex: auto;
+          display: flex;
+          align-items: stretch;
+          justify-content: start;
+          overflow: hidden;
         }
       }
 
@@ -104,8 +127,8 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%;
         min-height: 100vh;
+        min-height: 100dvh;
         padding: 1.5rem;
         justify-content: space-between;
         box-sizing: border-box;
@@ -998,6 +1021,69 @@
         opacity: 0;
         visibility: hidden;
       }
+      
+      .swipe-indicators {
+        display: none;
+      }
+      
+      @media (max-width: 1023px) {
+        .swipe-indicators {
+          display: flex;
+          position: fixed;
+          bottom: 16px;
+          left: 0;
+          right: 0;
+          justify-content: center;
+          gap: 6px;
+          z-index: 50;
+          pointer-events: none;
+        }
+        .swipe-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.3);
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .swipe-dot.active {
+          background-color: rgba(255, 255, 255, 0.9);
+          transform: scale(1.3);
+        }
+      }
+
+      /* Entrance animations */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+        transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+                    transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+        will-change: opacity, transform;
+      }
+      
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      
+      .delay-1 { transition-delay: 60ms; }
+      .delay-2 { transition-delay: 120ms; }
+      .delay-3 { transition-delay: 180ms; }
+      
+      /* In large screen, we don't need scroll animation for each slot if they are all visible, 
+         or maybe we can just trigger it once. 
+         Let's ensure they always appear on desktop if the animation observer is tricky with absolute positioning. */
+      @media (min-width: 1024px) {
+        .animate-on-scroll {
+           transition-duration: 0.8s;
+           transform: translateY(20px);
+        }
+        .animate-on-scroll.is-visible {
+           transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 150ms; }
+        .delay-2 { transition-delay: 300ms; }
+        .delay-3 { transition-delay: 450ms; }
+      }
     </style>
   </head>
   <body>
@@ -1081,9 +1167,11 @@
       [ top ]
     </button>
 
-    <div id="app-container" class="app-container">
+    <main id="app-container" class="app-container">
       <!-- Blocks will be injected here -->
-    </div>
+    </main>
+    
+    <div id="swipe-indicators" class="swipe-indicators"></div>
 
     <div id="editor-panel" class="editor-panel">
       <div class="editor-header">
@@ -1581,13 +1669,13 @@
         });
       }
 
-      function createMediaHtml(media) {
+      function createMediaHtml(media, title = "") {
         if (media.type === "video") {
-          return `<div class="media-item ${media.aspect}"><iframe class="video-iframe" src="${media.url}" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
+          return `<div class="media-item ${media.aspect}"><iframe class="video-iframe" src="${media.url}" title="${title}" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
         } else if (media.type === "image") {
-          return `<div class="media-item ${media.aspect}"><img class="media-img" src="${media.url}" alt="" loading="lazy" referrerPolicy="no-referrer" style="position: relative; width: 100%; height: 100%; object-fit: contain;"></div>`;
+          return `<div class="media-item ${media.aspect}"><img class="media-img" src="${media.url}" alt="${title}" loading="lazy" referrerPolicy="no-referrer" style="position: relative; width: 100%; height: 100%; object-fit: contain;"></div>`;
         } else if (media.type === "lottie") {
-          return `<div class="media-item ${media.aspect}"><dotlottie-player src="${media.url}" background="transparent" speed="1" class="lottie-player" loop autoplay></dotlottie-player></div>`;
+          return `<div class="media-item ${media.aspect}"><dotlottie-player src="${media.url}" title="${title}" background="transparent" speed="1" class="lottie-player" loop autoplay></dotlottie-player></div>`;
         }
         return "";
       }
@@ -1597,7 +1685,7 @@
         let blockEl = document.getElementById(`block-${blockId}`);
 
         if (!blockEl) {
-          blockEl = document.createElement("div");
+          blockEl = document.createElement("article");
           blockEl.id = `block-${blockId}`;
           blockEl.className = "block-element";
           container.appendChild(blockEl);
@@ -1631,23 +1719,23 @@
           });
 
         const mediaHtml =
-          mediaItems.slice(0, 2).map(createMediaHtml).join("") ||
+          mediaItems.slice(0, 2).map(media => createMediaHtml(media, block.title)).join("") ||
           '<div class="no-media-message">No Media Added</div>';
 
         const innerContentHtml = `
           <div class="block-inner-content ${block.layout === "row" ? "layout-row" : ""}">
-            <div class="header-section">
+            <header class="header-section animate-on-scroll">
               <div class="number-indicator">
                 0${blockId + 1} <span class="divider">/</span> <span class="total">0${blocks.length}</span>
               </div>
               <h2 class="category-heading">${block.category || '<span style="opacity: 0.5;">Empty</span>'}</h2>
-            </div>
+            </header>
             
-            <div class="${block.layout === "row" ? "right-column " : ""}media-section">
+            <figure class="${block.layout === "row" ? "right-column " : ""}media-section animate-on-scroll delay-1">
               <div class="media-container-inner">${mediaHtml}</div>
-            </div>
+            </figure>
 
-            <div class="footer-section">
+            <footer class="footer-section animate-on-scroll delay-2">
               <div class="text-info">
                 <h4 class="title-heading">${block.title || "Untitled"}</h4>
                 <div class="description-text">${renderDescriptionHtml(block.description, block.highlightColor)}</div>
@@ -1657,7 +1745,7 @@
                 <span class="tools-label">使用工具：</span>
                 <span class="tools-value">${block.tools || "-"}</span>
               </div>
-            </div>
+            </footer>
           </div>
           <div class="unhovered-overlay"></div>
         `;
@@ -1693,18 +1781,15 @@
           const slot = LAYOUTS[activeLayout][slotIndex];
           const el = blockElements[blockId];
           if (el && slot) {
-            el.style.cssText = `
-              position: absolute;
-              top: ${slot.y * 20}%;
-              left: ${slot.x * 20}%;
-              width: ${slot.w * 20}%;
-              height: ${slot.h * 20}%;
-              z-index: ${blockId === hoveredId ? "10" : "1"};
-              --lg-scale: ${slot.w / 3};
-              --dz-margin: ${slot.w === 1 ? "35%" : "25%"};
-              background-color: ${blocks[blockId].backgroundColor};
-              color: ${blocks[blockId].textColor};
-            `;
+            el.style.setProperty('--block-top', `${slot.y * 20}%`);
+            el.style.setProperty('--block-left', `${slot.x * 20}%`);
+            el.style.setProperty('--block-width', `${slot.w * 20}%`);
+            el.style.setProperty('--block-height', `${slot.h * 20}%`);
+            el.style.setProperty('--lg-scale', slot.w / 3);
+            el.style.setProperty('--dz-margin', slot.w === 1 ? '35%' : '25%');
+            el.style.zIndex = blockId === hoveredId ? '10' : '1';
+            el.style.backgroundColor = blocks[blockId].backgroundColor;
+            el.style.color = blocks[blockId].textColor;
             el.setAttribute("data-slot-index", slotIndex);
           }
         });
@@ -1873,10 +1958,60 @@
         }, 150);
       });
 
+      function initSwipeIndicators() {
+        const indicatorsContainer = document.getElementById("swipe-indicators");
+        if (!indicatorsContainer) return;
+        indicatorsContainer.innerHTML = blocks.map((_, i) => `<div class="swipe-dot" data-index="${i}"></div>`).join("");
+        
+        const dots = indicatorsContainer.querySelectorAll(".swipe-dot");
+        if (dots.length > 0) dots[0].classList.add("active");
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const idStr = entry.target.id;
+              const index = parseInt(idStr.replace("block-", ""), 10);
+              dots.forEach(dot => dot.classList.remove("active"));
+              if (dots[index]) dots[index].classList.add("active");
+            }
+          });
+        }, {
+          root: container,
+          threshold: 0.5
+        });
+        
+        Object.values(blockElements).forEach(el => observer.observe(el));
+      }
+
+      function initScrollAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+            } else {
+              // Re-animate when swiping back and forth on mobile
+              if (window.innerWidth < 1024) {
+                entry.target.classList.remove('is-visible');
+              }
+            }
+          });
+        }, {
+          root: null,
+          threshold: 0.15,
+          rootMargin: "0px"
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
+      }
+
       function init() {
         container.innerHTML = "";
         blocks.forEach((_, i) => renderBlockContents(i));
         updateLayout();
+        initSwipeIndicators();
+        initScrollAnimations();
 
         if (container) {
           container.addEventListener("pointermove", handlePointerMove, {
